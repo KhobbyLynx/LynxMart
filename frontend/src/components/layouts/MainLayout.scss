@@ -1,0 +1,13 @@
+.main__layout {
+    .navbar__layer {
+        position: fixed;
+        top: 0;
+        backdrop-filter: blur(4px);
+        left: 0;
+        position: sticky;
+        right: 0;
+        top: 0;
+        width: 100%;
+        z-index: 2;
+    }
+}

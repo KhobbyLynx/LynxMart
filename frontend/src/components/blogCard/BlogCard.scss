@@ -1,0 +1,74 @@
+.blog__card{
+    padding-top: 90px;
+    .blog__box{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        position: relative;
+        @media screen and (max-width: '577px') {
+            flex-wrap: wrap;
+        }
+        .blog__image{
+            width: 50%;
+            margin-right: 40px;
+            @media screen and (max-width: '577px') {
+                width: 100%;
+                margin-right: 0;
+            }
+            img{
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+            }
+        }
+        .blog__details{
+            width: 50%;
+            @media screen and (max-width: '577px') {
+                width: 100%;
+                padding-top: 30px;
+            }
+            h2{
+                font-size: 20px;
+                color: #D65E05;
+            }
+            p{
+                font-size: 16px;
+                color: #777;
+                margin: 15px  0 20px 0;
+            }
+            .blog__link{
+                text-decoration: none;
+                font-size: 12px;
+                text-transform: uppercase;
+                color: #06d0b9a2;
+                font-weight: 600;
+                position: relative;
+                transition: 0.3s;
+                &::after{
+                    content: "";
+                    width: 50px;
+                    height: 2px;
+                    background-color: #06d0b9a2;
+                    position: absolute;
+                    top: 5px;
+                    right: -60px;
+                }
+                &:hover{
+                    color: #999;
+                    &::after{
+                        background-color: #999;
+                    }
+                }
+            }
+        }
+        span{
+            position: absolute;
+            top: -50px;
+            left: 0;
+            font-size: 70px;
+            font-weight: 700;
+            color: #06d0b9a2;
+            z-index: -9;
+        }
+    }
+}

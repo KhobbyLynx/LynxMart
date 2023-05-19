@@ -1,0 +1,152 @@
+.navbar{
+    background-color: #999;
+    padding: 10px 80px;
+    
+    @media screen and (max-width: '999px') {
+        padding-bottom: 16px;
+    }
+
+    @media screen and (max-width: '699px') {
+        padding: 10px 20px;
+    }
+    .navbar__top{
+        display: flex;
+        flex-direction: column;
+
+        .nav__top{
+            justify-content: space-between;
+            .navbar__left{
+                .menu__icon{
+                    font-size: 38px;
+                    color: #000;
+                    margin-right: 10px;
+                    @media screen and (min-width: '999px') {
+                        display: none;
+                    }
+                }
+                .navbar__logo{
+                    width: 68px;
+                    height: auto;
+                }
+            }
+            .navbar__search{
+                @media screen and (max-width: '999px') {
+                    display: none !important;
+                }
+            }
+            .navbar__right{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+                .navbar__user{
+                    justify-content: center;
+                    gap: 6px;
+                    font-size: 16px;
+                    background-color: transparent;
+                    color: #000;
+                    border: none;
+                    cursor: pointer;
+                    .user__icon{
+                        font-size: 22px;
+                        @media screen and (max-width: '999px') {
+                            color: #000;
+                            font-size: 28px;
+                        }
+                    }
+                    span{
+                        @media screen and (max-width: '999px') {
+                            display: none;
+                        }
+                    }
+                }
+                .navbar__cart{
+                    background-color: transparent;
+                    border: none;
+                    cursor: pointer;
+                    position: relative;
+                    img{
+                        width: 22px;
+                    }
+                }
+            }
+        }
+        .line{
+            margin: 5px 0 10px;
+            border: 1px solid #0000006a;
+            @media screen and (min-width: '999px') {
+                display: none !important;
+                z-index: 999;
+            }
+        }
+        .mobile__search{
+            @media screen and (min-width: '999px') {
+                display: none !important;
+            }
+        }
+    }
+
+    .navbar__line{
+        border: 1px solid #444;
+        width: 100%;
+        margin-top: 5px;
+        @media screen and (max-width: '999px') {
+            display: none;
+        }
+    }
+    .navbar__bottom{
+        justify-content: space-between;
+        @media screen and (max-width: '999px') {
+            display: none;
+        }
+        .links__container{
+            justify-content: space-between;
+            padding: 12px 0;
+            font-size: 13px;
+            width: 30%;
+
+            @media screen and (max-width: '999px') {
+                width: 100%;
+                align-items: center;
+                flex-direction: column; 
+                gap: 50px; 
+            }
+        }
+        .icon__links{
+            width: 12%;
+            justify-content: space-between;
+            .icon__container{
+                position: relative;
+                cursor: pointer;
+            }
+            .support{
+                margin-right: 3px;
+            }
+        }
+        .navlink{
+            text-decoration: none;
+            color: #000;
+            text-transform: capitalize;
+        }
+    }
+    .menu__container{
+        background-color: #D65E05;
+        position: absolute;
+        width: 90%;
+        height: 100%;
+        top: 76px;
+        bottom: 0;
+        z-index: 999;
+
+        display: flex;
+        flex-direction: column;
+        font-size: 20px;
+        padding: 30px 0 0 40px ;
+        gap: 30px;
+        
+        .menu__link{
+            color: #303431;
+            text-transform: capitalize;
+        }
+    }
+}

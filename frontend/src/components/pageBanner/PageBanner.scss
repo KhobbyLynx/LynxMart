@@ -1,0 +1,17 @@
+.page__banner{
+    height: 300px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    h2{
+        font-size: 32px;
+        color: #f1f1f1;
+    }
+    p{
+        font-size: 16px;
+        color: #f1f1f1;
+    }
+}

@@ -1,0 +1,32 @@
+.feature__card{
+    cursor: pointer;
+    .feature__box{
+        width: 166px;
+        align-items: center;
+        text-align: center;
+        padding: 25px 15px;
+        box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
+        border: 1px  solid #cce7d0;
+        border-radius: 4px;
+        margin: 15px 0;
+
+        @media screen and (max-width: '1120px') {
+            width: 250px;
+        }
+        @media screen and (max-width: '657px') {
+            width: 160px;
+        }
+        img{
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        h6{
+            display: inline-block;
+            padding: 9px 8px 6px 8px;
+            line-height: 1;
+            color: #088178;
+            background-color: #fddde4;
+            border-radius: 4px;
+        }
+    }
+}

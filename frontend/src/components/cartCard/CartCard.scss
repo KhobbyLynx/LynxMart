@@ -1,0 +1,46 @@
+tr {
+    td {
+        font-size: 14px;
+        color: #444;
+        padding-top: 15px;
+
+        &:nth-child(1) {
+            width: 100px;
+            text-align: center;
+
+            .remove__icon {
+                color: red;
+                font-size: 16px;
+            }
+        }
+
+        &:nth-child(2) {
+            width: 150px;
+            text-align: center;
+
+            img {
+                width: auto;
+                height: 80px;
+            }
+        }
+
+        &:nth-child(3) {
+            width: 250px;
+            text-align: center;
+        }
+
+        &:nth-child(4),
+        &:nth-child(5),
+        &:nth-child(6) {
+            width: 150px;
+            text-align: center;
+        }
+
+        &:nth-child(5) {
+            input {
+                width: 70px;
+                padding: 10px 5px 10px 15px;
+            }
+        }
+    }
+}
