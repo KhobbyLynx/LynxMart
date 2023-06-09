@@ -1,26 +1,43 @@
-import React from 'react'
+import {useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import './Shop.scss'
-import { productsGridOne, productsGridTwo, shopBanner } from '../../data'
+import { shopBanner } from '../../data'
 import ProductCard from '../../components/products/ProductCard'
 import PageBanner from '../../components/pageBanner/PageBanner'
+import newRequest from '../../utils/newRequest'
 
 const Shop = () => {
-
-    const ProductsGridOne = productsGridOne.map( product => {
+    const [products, SetProducts] = useState([]);
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const response = await newRequest.get('/products');
+          SetProducts(response.data)
+        } catch (error) {
+          console.log('Error fetching products', error)
+        }
+      }
+      
+      fetchData();
+    }, [])
+    
+    const ProductsGridOne =  products.map( product => {
         return (
-          < ProductCard
-            key={product.id}
-            {...product}   
-          />
+          <Link to={`/${product._id}`} key={product._id} className='product_link link'> 
+            < ProductCard
+              {...product}
+            />
+          </Link>
         )
     })
 
-    const ProductsGridTwo = productsGridTwo.map( product => {
+    const ProductsGridTwo = products.map( product => {
         return (
-            < ProductCard
-            key={product.id}
-            {...product}   
-            />
+          <Link to={`/${product._id}`} key={product._id} className='product_link link'> 
+          < ProductCard
+            {...product}
+          />
+        </Link>
         )
     })
   return (

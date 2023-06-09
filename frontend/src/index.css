@@ -1,28 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Iceberg&family=Inter:wght@100;200;400;600;800&family=League+Spartan:wght@100;400;600&family=Poppins:wght@100;400&family=Roboto:wght@100;400;500;700&display=swap');
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Inter', 'Roboto', Avenir, 'League Spartan', Arial, sans-serif;
 }
 
-.link{
+.link {
   text-decoration: none;
+  cursor: pointer;
 }
 
-.df{
+.df {
   display: flex;
   align-items: center;
 }
 
-.icon__link{
+.icon__link {
   color: #000;
   font-size: 22px;
   cursor: pointer;
 }
 
-.icon__count{
+.icon__count {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,4 +36,118 @@
   width: 20px;
   height: 20px;
   font-size: 10px;
+}
+
+.product_link {
+  width: 23%;
+  margin: 30px 10px;
+
+  @media screen and (max-width: '1299px') {
+    width: 39%;
+    margin: 30px 20px;
+  }
+
+  @media screen and (max-width: '499px') {
+    margin: 10px 2px;
+    flex-basis: 46%;
+    padding: 8px;
+    border-radius: 10px;
+  }
+}
+
+.loader {
+  font-size: 100px;
+}
+
+.ch3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #06D0B8;
+  padding: 40px 0 10px;
+}
+
+.ch2 {
+  font-size: 18px;
+  color: #D65E05;
+  padding-bottom: 20px;
+}
+
+.ch6 {
+  font-size: 13px;
+  font-weight: 300;
+  padding-bottom: 60px;
+
+}
+
+.cs {
+  font-size: 13px;
+  font-weight: 300;
+  padding-bottom: 60px;
+  font-weight: 100;
+}
+
+.cp {
+  font-size: 14px;
+  font-weight: 500;
+  padding-bottom: 20px;
+  color: #088178;
+}
+
+.box__shadow {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.input__field {
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &[type="number"] {
+    appearance: textfield;
+  }
+}
+
+.hide{
+  display: none;
+}
+.show{
+  display: initial;
+}
+
+.tab__opt {
+  border: 1px solid #f1f1f1;
+  border-radius: 5px;
+  height: 68px;
+  padding: 0 20px;
+  background-color: transparent;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+}
+.tab__p {
+    font-size: 14px;
+    font-weight: 600;
+    color: #56565b;
+    padding-left: 18px;
+}
+
+.tab__options{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.checkout__btn{
+  width: 100%;
+  padding: 14px;
+  border-radius: 4px;
+  border: 1px solid #EF8B33;
+  background: #EF8B33;
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 10px;
 }

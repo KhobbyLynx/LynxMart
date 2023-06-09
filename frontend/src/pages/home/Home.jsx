@@ -1,4 +1,6 @@
-import React from 'react'
+import {useState, useEffect} from 'react'
+import { Link } from 'react-router-dom'
+import newRequest from '../../utils/newRequest'
 import Hero from '../hero/Hero'
 import './Home.scss'
 import Category from '../../components/category/Category'
@@ -9,21 +11,38 @@ import Brands from '../../components/brands/Brands'
 
 const Home = () => {
 
-  const ProductsGridOne = productsGridOne.map( product => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await newRequest.get('/products'); 
+        setProducts(response.data); 
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const ProductsGridOne = products.map( product => {
     return (
-      < ProductCard
-        key={product.id}
-        {...product}   
-      />
+      <Link to={`/${product._id}`} key={product._id} className='product_link link'>
+        < ProductCard
+          {...product}
+        />
+      </Link>
     )
   })
 
-  const ProductsGridTwo = productsGridTwo.map( product => {
+  const ProductsGridTwo = products.map( product => {
     return (
+      <Link to={`/${product._id}`} key={product._id} className='product_link link'>
       < ProductCard
-        key={product.id}
-        {...product}   
+        {...product}
       />
+    </Link>
     )
   })
 
@@ -57,13 +76,13 @@ const Home = () => {
             <h4>crazy deals</h4>
             <h2>buy 1 get 1 free</h2>
             <span>The best classic dress is on sale at LynxMart</span>
-            <button class="white">Learn More</button>
+            <button className="white">Learn More</button>
           </div>
           <div className="banner__box">
             <h4>spring/summer</h4>
             <h2>upcoming season</h2>
             <span>The best classic Rollex is on sale at LynxMart</span>
-            <button class="white">Collections</button>
+            <button className="white">Collections</button>
           </div>
         </section>
 

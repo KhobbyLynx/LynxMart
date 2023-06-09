@@ -1,0 +1,111 @@
+.account{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    h2{
+        color: #D65E05;
+        font-size: 23px;
+    }
+    p{
+        color: #666;
+        font-size: 13px;
+        text-align: center;
+    }
+    img{
+        width: 80px;
+        margin: 20px;
+    }
+    .account__form{
+        flex: 1;
+    }
+    .account__footer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #444;
+        width: 100%;
+        margin-top: auto;
+        padding: 8px;
+    }
+}
+
+fieldset{
+    padding: 20px 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 500px;
+    border: 1px solid #06D0B8;
+    border-radius: 5px;
+    h6{
+        color: #000;
+    }
+
+    legend{
+        padding: 20px;
+        font-size: 18px;
+        color: #666;
+    }
+
+    input, button{
+        width: 80%;
+        padding: 8px;
+        margin-bottom: 20px;
+        outline: none;
+        border: 1px solid #999;
+        &::placeholder{
+            font-size: 14px;
+        }
+    }
+
+    button{
+        background-color: #06D0B8;
+        border: 1px solid #06D0B8;
+        color: #000;
+    }
+    p{
+        width: 80%;
+    }
+}
+
+.other__link{
+    .link__header{
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 0 30px;
+        span{
+            font-size: 16px;
+            color: #444;
+        }
+        hr{
+            width: 30%;
+            height: 0px;
+            border: none;
+            border-bottom: 1px solid #06D0B8;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+    }
+    button{
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 50px;
+        outline: none;
+        background-color: transparent;
+        border: 1px solid #999;
+        color: #666;
+        border-radius: 5px;
+        &::placeholder{
+            font-size: 14px;
+        }
+    }
+    p{
+        width: 80%;
+        margin: auto;
+        padding-bottom: 50px;
+    }
+}

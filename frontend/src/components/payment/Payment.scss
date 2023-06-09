@@ -1,0 +1,140 @@
+.checkout__payment {
+    h6 {
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 700;
+        color: #75757a;
+        padding: 40px 0 20px;
+    }
+
+    .tab__options {
+        .payment__info {
+            form {
+                width: 100%;
+                padding: 20px;
+                border: 1px solid #f1f1f1;
+
+                .input__container {
+                    position: relative;
+                    margin-top: 10px;
+
+                    &.has__value .input__label {
+                        transform: translateY(-20px);
+                        font-size: 12px;
+                    }
+
+                    .input__field {
+                        border: none;
+                        border-bottom: 1px solid #75757a;
+                        outline: none;
+                        width: 100%;
+                        height: 50px;
+
+                        &.focused {
+                            border-color: #EF8B33;
+                        }
+                    }
+
+                    .input__label {
+                        position: absolute;
+                        top: 16px;
+                        left: 0px;
+                        transition: transform 0.3s ease;
+                        pointer-events: none;
+                        color: #999;
+                        font-size: 15px;
+
+                        &.focused,
+                        .input__field:not(:placeholder-shown)+& {
+                            transform: translateY(-20px);
+                            font-size: 12px;
+                            color: #75757a;
+                        }
+                    }
+                }
+
+                .date__group {
+                    display: flex;
+                    flex-direction: column;
+
+                    .mt {
+                        margin-top: 0;
+                    }
+
+                    .date__container {
+                        align-items: center;
+                        justify-content: space-between;
+
+                        .expiry__date {
+                            align-items: center;
+                            justify-content: space-between;
+                            width: 70%;
+                            gap: 10px;
+
+                            select {
+                                border: none;
+                                border-bottom: 1px solid #75757a;
+                                outline: none;
+                                width: 100%;
+                                height: 50px;
+                            }
+                        }
+                    }
+                }
+
+                .operator__number {
+                    align-items: center;
+                    justify-content: space-between;
+                    padding-top: 50px;
+                    width: 100%;
+
+                    .prefix__input {
+                        border-bottom: 1px dotted #000;
+                        width: 15%;
+                        height: 50px;
+                        
+                    }
+
+                    .operator__container {
+                        position: relative;
+                        width: 80%;
+
+                        &.has__value .opl {
+                            transform: translateY(-20px);
+                            font-size: 12px;
+                        }
+
+                        .opf {
+                            border: none;
+                            border-bottom: 1px solid #75757a;
+                            outline: none;
+                            width: 100%;
+                            height: 50px;
+
+                            &.focused {
+                                border-color: #EF8B33;
+                            }
+                        }
+
+                        .opl {
+                            position: absolute;
+                            top: 10px;
+                            left: 0px;
+                            transition: transform 0.3s ease;
+                            pointer-events: none;
+                            color: #999;
+                            font-size: 15px;
+
+                            &.focused,
+                            .opf:not(:placeholder-shown)+& {
+                                transform: translateY(-20px);
+                                font-size: 12px;
+                                color: #75757a;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

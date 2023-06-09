@@ -116,7 +116,7 @@ export const productsGridOne= [
         id: 1,
         productImg: 'https://res.cloudinary.com/khobbylynx/image/upload/v1683975738/lynxmart/img/products/clothing/f2_oxrgpb.jpg',
         brandName: 'adidas',
-        productName: 'Men’s Printed Poplin Shirt',
+        name: 'Men’s Printed Poplin Shirt',
         stats: {
             ratings: 5.0,
             reviewCount: 83
@@ -128,7 +128,7 @@ export const productsGridOne= [
         id: 2,
         productImg: 'https://res.cloudinary.com/khobbylynx/image/upload/v1683975736/lynxmart/img/products/clothing/f3_mg2446.jpg',
         brandName: 'Gucci',
-        productName: 'New Fashion Summer Top',
+        name: 'New Fashion Summer Top',
         stats: {
             ratings: 3.5,
             reviewCount: 26
@@ -140,7 +140,7 @@ export const productsGridOne= [
         id: 3,
         productImg: 'https://res.cloudinary.com/khobbylynx/image/upload/v1684216294/lynxmart/img/products/sneakers/shoes02_r9cznf.jpg',
         brandName: 'Balenciaga',
-        productName: "Fashion Men's Sneaker",
+        name: "Fashion Men's Sneaker",
         stats: {
             ratings: 4.0,
             reviewCount: 6
@@ -152,7 +152,7 @@ export const productsGridOne= [
         id: 4,
         productImg: "https://res.cloudinary.com/khobbylynx/image/upload/v1683975723/lynxmart/img/products/clothing/f1_lvgj5f.jpg",
         brandName: "Levi",
-        productName: "Men's Designer T-Shirt",
+        name: "Men's Designer T-Shirt",
         stats: {
             ratings: 4.5,
             reviewCount: 38
@@ -164,7 +164,7 @@ export const productsGridOne= [
         id: 5,
         productImg: 'https://res.cloudinary.com/khobbylynx/image/upload/v1683975709/lynxmart/img/products/clothing/f4_j6sxpb.jpg',
         brandName: 'Louis Vuitton',
-        productName: 'Men\'s Summer Thin Quick Drying Sportswear',
+        name: 'Men\'s Summer Thin Quick Drying Sportswear',
         stats: {
             ratings: 5.0,
             reviewCount: 66
@@ -176,7 +176,7 @@ export const productsGridOne= [
         id: 6,
         productImg: 'https://res.cloudinary.com/khobbylynx/image/upload/v1683975743/lynxmart/img/products/bags/pro-bag4_jolkcd.jpg',
         brandName: 'Supreme',
-        productName: 'New Fashion Unisex Sports Backpack',
+        name: 'New Fashion Unisex Sports Backpack',
         stats: {
             ratings: 4.5,
             reviewCount: 62
@@ -188,7 +188,7 @@ export const productsGridOne= [
         id: 7,
         productImg: 'https://res.cloudinary.com/khobbylynx/image/upload/v1684216295/lynxmart/img/products/sneakers/shoes10_tdgmtl.jpg',
         brandName: 'Tommy Hilfiger',
-        productName: '2023 Designer Sneaker',
+        name: '2023 Designer Sneaker',
         stats: {
             ratings: 2.5,
             reviewCount: 13
@@ -200,7 +200,7 @@ export const productsGridOne= [
         id: 8,
         productImg: 'https://res.cloudinary.com/khobbylynx/image/upload/v1683975723/lynxmart/img/products/bags/pro-bag3_yacejz.jpg',
         brandName: 'Calvin Klein',
-        productName: "High Quality Durable Washable Paper bag",
+        name: "High Quality Durable Washable Paper bag",
         stats: {
             ratings: 5.0,
             reviewCount: 6
@@ -215,7 +215,7 @@ export const productsGridTwo = [
         id: 1,
         productImg: 'https://res.cloudinary.com/khobbylynx/image/upload/v1683975739/lynxmart/img/products/bags/pro-bag2_ujrgsd.jpg',
         brandName: 'adidas',
-        productName: 'Modern Poplin Backpack',
+        name: 'Modern Poplin Backpack',
         stats: {
             ratings: 5.0,
             reviewCount: 83
@@ -227,7 +227,7 @@ export const productsGridTwo = [
         id: 2,
         productImg: 'https://res.cloudinary.com/khobbylynx/image/upload/v1683975719/lynxmart/img/products/clothing/n3_gsucc3.jpg',
         brandName: 'Gucci',
-        productName: 'New Fashion Top',
+        name: 'New Fashion Top',
         stats: {
             ratings: 3.5,
             reviewCount: 26
@@ -239,7 +239,7 @@ export const productsGridTwo = [
         id: 3,
         productImg: 'https://res.cloudinary.com/khobbylynx/image/upload/v1684216295/lynxmart/img/products/sneakers/shoes07_s4uapk.jpg',
         brandName: 'Balenciaga',
-        productName: "Fashion Men's Sneaker",
+        name: "Fashion Men's Sneaker",
         stats: {
             ratings: 4.0,
             reviewCount: 6
@@ -251,7 +251,7 @@ export const productsGridTwo = [
         id: 4,
         productImg: "https://res.cloudinary.com/khobbylynx/image/upload/v1683975721/lynxmart/img/products/clothing/f6_yvrffw.jpg",
         brandName: "Levi",
-        productName: "Men's Designer Shirt",
+        name: "Men's Designer Shirt",
         stats: {
             ratings: 4.5,
             reviewCount: 38
@@ -263,7 +263,7 @@ export const productsGridTwo = [
         id: 5,
         productImg: 'https://res.cloudinary.com/khobbylynx/image/upload/c_scale,h_1100,w_1100/v1683975735/lynxmart/img/products/watch/rolex_eca_sviuo1.jpg',
         brandName: 'Lynx',
-        productName: 'Men Business Quartz Watch Classic Stainless Steel',
+        name: 'Men Business Quartz Watch Classic Stainless Steel',
         stats: {
             ratings: 5.0,
             reviewCount: 66
@@ -275,7 +275,7 @@ export const productsGridTwo = [
         id: 6,
         productImg: 'https://res.cloudinary.com/khobbylynx/image/upload/c_scale,h_1100,w_1100/v1683975736/lynxmart/img/products/watch/rolex_ec_vx8icn.jpg',
         brandName: 'James Miller',
-        productName: 'Classic & Modern Rolex Watch',
+        name: 'Classic & Modern Rolex Watch',
         stats: {
             ratings: 4.5,
             reviewCount: 62
@@ -287,7 +287,7 @@ export const productsGridTwo = [
         id: 7,
         productImg: 'https://res.cloudinary.com/khobbylynx/image/upload/c_scale,h_1100,w_1100/v1683975745/lynxmart/img/products/whisky/BOUTEILLE_d_kkjsmp.jpg',
         brandName: 'Lynx',
-        productName: "Seagram's Superior Grain Whisky",
+        name: "Seagram's Superior Grain Whisky",
         stats: {
             ratings: 2.5,
             reviewCount: 13
@@ -299,7 +299,7 @@ export const productsGridTwo = [
         id: 8,
         productImg: 'https://res.cloudinary.com/khobbylynx/image/upload/v1683975740/lynxmart/img/products/whisky/BOUTEILLE_gos0cd.jpg',
         brandName: 'Dulle',
-        productName: "Blended Scotch Whisky",
+        name: "Blended Scotch Whisky",
         stats: {
             ratings: 5.0,
             reviewCount: 6
@@ -432,32 +432,32 @@ export const blogs = [
 export const features = [
     {
         id: 1,
-        url: 'https://res.cloudinary.com/khobbylynx/image/upload/v1683827726/justclick/Media/f1_lgjqdw.png',
+        url: 'https://res.cloudinary.com/khobbylynx/image/upload/v1683975726/lynxmart/img/features/f4_savtdr.png',
         title: 'Free Shipping'
     },
     {
         id: 2,
-        url: 'https://res.cloudinary.com/khobbylynx/image/upload/v1683827741/justclick/Media/f2_zoqgad.png',
+        url: 'https://res.cloudinary.com/khobbylynx/image/upload/v1683975732/lynxmart/img/features/f1_krxbdn.png',
         title: 'Online Order'
     },
     {
         id: 3,
-        url: 'https://res.cloudinary.com/khobbylynx/image/upload/v1683827752/justclick/Media/f3_bhist9.png',
+        url: 'https://res.cloudinary.com/khobbylynx/image/upload/v1683975732/lynxmart/img/features/f3_gcxgwq.png',
         title: 'Save Money'
     },
     {
         id: 4,
-        url: 'https://res.cloudinary.com/khobbylynx/image/upload/v1683827760/justclick/Media/f4_co0tln.png',
+        url: 'https://res.cloudinary.com/khobbylynx/image/upload/v1683975731/lynxmart/img/features/f2_wyvv7n.png',
         title: 'Promotions'
     },
     {
         id: 5,
-        url: 'https://res.cloudinary.com/khobbylynx/image/upload/v1683827775/justclick/Media/f5_vwnhtl.png',
+        url: 'https://res.cloudinary.com/khobbylynx/image/upload/v1683975728/lynxmart/img/features/f5_nnorby.png',
         title: 'Happy Sell'
     },
     {
         id: 6,
-        url: 'https://res.cloudinary.com/khobbylynx/image/upload/v1683827781/justclick/Media/f6_xbvd6f.png',
+        url: 'https://res.cloudinary.com/khobbylynx/image/upload/v1683975740/lynxmart/img/features/f6_n9zobo.png',
         title: 'F24/7 Support'
     },
 ]
@@ -466,7 +466,7 @@ export const cartItems = [
     {
         id: 1,
         productImg: 'https://res.cloudinary.com/khobbylynx/image/upload/v1683975709/lynxmart/img/products/clothing/f4_j6sxpb.jpg',
-        productName: 'Men\'s Summer Thin Quick Drying Sportswear',
+        name: 'Men\'s Summer Thin Quick Drying Sportswear',
         price: 199.98,
         quantity: 2,
         subTotal: 399.96
@@ -474,7 +474,7 @@ export const cartItems = [
     {
         id: 2,
         productImg: 'https://res.cloudinary.com/khobbylynx/image/upload/v1683975743/lynxmart/img/products/bags/pro-bag4_jolkcd.jpg',
-        productName: 'New Fashion Unisex Sports Backpack',
+        name: 'New Fashion Unisex Sports Backpack',
         price: 200.98,
         quantity: 2,
         subTotal: 200.00
@@ -482,7 +482,7 @@ export const cartItems = [
     {
         id: 3,
         productImg: 'https://res.cloudinary.com/khobbylynx/image/upload/c_scale,h_1100,w_1100/v1683975735/lynxmart/img/products/watch/rolex_eca_sviuo1.jpg',
-        productName: 'Men Business Quartz Watch Classic Stainless Steel',
+        name: 'Men Business Quartz Watch Classic Stainless Steel',
         price: 3900.98,
         quantity: 2,
         subTotal: 540.00
@@ -490,15 +490,15 @@ export const cartItems = [
     {
         id: 4,
         productImg: 'https://res.cloudinary.com/khobbylynx/image/upload/c_scale,h_1100,w_1100/v1683975745/lynxmart/img/products/whisky/BOUTEILLE_d_kkjsmp.jpg',
-        productName: "Seagram's Superior Grain Whisky",
+        name: "Seagram's Superior Grain Whisky",
         price: 520.98,
         quantity: 2,
         subTotal: 1430.00
     },
     {
         id: 5,
-        productImg: 'https://res.cloudinary.com/khobbylynx/image/upload/c_scale,h_1100,w_1100/v1683975680/lynxmart/img/products/sneakers/sneaker1_aihkjr.png',
-        productName: "Fashion Men's Sneaker",
+        productImg: 'https://res.cloudinary.com/khobbylynx/image/upload/v1684216294/lynxmart/img/products/sneakers/shoes05_espdt8.jpg',
+        name: "Fashion Men's Sneaker",
         price: 340.98,
         quantity: 2,
         subTotal: 790.00
@@ -510,7 +510,7 @@ export const featuredProducts = [
         id: 1,
         productImg: 'https://res.cloudinary.com/khobbylynx/image/upload/v1683975738/lynxmart/img/products/clothing/f2_oxrgpb.jpg',
         brandName: 'adidas',
-        productName: 'Men’s Printed Poplin Shirt',
+        name: 'Men’s Printed Poplin Shirt',
         stats: {
             ratings: 5.0,
             reviewCount: 83
@@ -522,7 +522,7 @@ export const featuredProducts = [
         id: 2,
         productImg: 'https://res.cloudinary.com/khobbylynx/image/upload/v1683975736/lynxmart/img/products/clothing/f3_mg2446.jpg',
         brandName: 'Gucci',
-        productName: 'New Fashion Summer Top',
+        name: 'New Fashion Summer Top',
         stats: {
             ratings: 3.5,
             reviewCount: 26
@@ -534,7 +534,7 @@ export const featuredProducts = [
         id: 3,
         productImg: 'https://res.cloudinary.com/khobbylynx/image/upload/v1684216294/lynxmart/img/products/sneakers/shoes02_r9cznf.jpg',
         brandName: 'Balenciaga',
-        productName: "Fashion Men's Sneaker",
+        name: "Fashion Men's Sneaker",
         stats: {
             ratings: 4.0,
             reviewCount: 6
@@ -546,7 +546,7 @@ export const featuredProducts = [
         id: 4,
         productImg: "https://res.cloudinary.com/khobbylynx/image/upload/v1683975723/lynxmart/img/products/clothing/f1_lvgj5f.jpg",
         brandName: "Levi",
-        productName: "Men's Designer T-Shirt",
+        name: "Men's Designer T-Shirt",
         stats: {
             ratings: 4.5,
             reviewCount: 38

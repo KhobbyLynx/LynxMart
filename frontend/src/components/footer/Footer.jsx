@@ -3,6 +3,7 @@ import { SiFacebook, SiTwitter, SiInstagram, SiTiktok} from 'react-icons/si'
 import './Footer.scss'
 import { images } from '../../constants'
 import { Link } from 'react-router-dom'
+import CopyRight from '../copyRight/CopyRight'
 
 const Footer = () => {
   return (
@@ -59,9 +60,7 @@ const Footer = () => {
               </div>
           </div>
         </div>
-        <div className="footer__copyright">
-          <p>© 1976-2023, SKT-Lynx. All Rights Reserved.</p>
-        </div>
+        <CopyRight />
     </div>
   )
 }

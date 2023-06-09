@@ -6,17 +6,17 @@ import { NavLink, Link } from 'react-router-dom';
 import { images } from '../../constants';
 import "./Navbar.scss";
 import Search from '../search/Search';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
+    const cartItemsQuantity = useSelector(state => state.cart.totalQuantity);
     const [toggle, setToggle] = useState(false)
-
     function openMenu() {
         setToggle(true)
     }
     function closeMenu() {
         setToggle(false)
     }
-
     const activeStyles = {
         fontWeight: 'bold',
         borderBottom: '2px solid #000'
@@ -36,14 +36,18 @@ const Navbar = () => {
                     </div>
                     < Search  className='navbar__search'/>
                     <div className="navbar__right">
-                        <button className="navbar__user df">
-                            <BiUser className='user__icon'/>
-                            <span>Account</span>
-                        </button>
-                        <button className="navbar__cart df">
-                            <Link to='cart' ><img src={images.cart} alt="" /></Link>
-                            <div className="icon__count">0</div>
-                        </button>
+                        <Link to='/account/login'  className='link'>
+                            <button className="navbar__user df">
+                                <BiUser className='user__icon'/>
+                                <span>Account</span>
+                            </button>
+                        </Link>
+                        <Link to='cart'>
+                            <button className="navbar__cart df">
+                                <img src={images.cart} alt="" />
+                                <div className="icon__count">{cartItemsQuantity}</div>
+                            </button>
+                        </Link>
                     </div>
                 </div>
                 <hr className='line'/>
@@ -86,7 +90,8 @@ const Navbar = () => {
             </div>
                 { toggle &&
                     <div className="menu__container">
-                        {['home','shop','blog','about','contact'].map(navlink => (
+                        <Link to='/' className='menu__link link' onClick={closeMenu}>Home</Link>
+                        {['shop','blog','about','contact'].map(navlink => (
                             <Link
                             to={navlink}
                             key={navlink}

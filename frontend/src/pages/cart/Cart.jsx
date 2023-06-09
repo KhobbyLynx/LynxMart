@@ -1,16 +1,31 @@
 import React from 'react'
 import './Cart.scss'
 import PageBanner from '../../components/pageBanner/PageBanner'
-import { cartBanner, cartItems } from '../../data'
+import { cartBanner } from '../../data'
 import CartCard from '../../components/cartCard/CartCard'
+import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const Cart = () => {
-
+    
+    const cartItems = useSelector(state => state.cart.itemsList);
     const cartProducts = cartItems.map(item => {
         return(
             < CartCard key={item.id} {...item} />
-        )
+            )
     })
+        
+    const calculateTotal = () => {
+    const total = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    return total.toFixed(2)
+    }
+
+    const shippingFee = 0;
+    const calculateOverallTotal = () => {
+        const grandTotal = parseFloat(calculateTotal());
+        const overallTotal = grandTotal + shippingFee;
+        return overallTotal.toFixed(2);
+    };
     return (
         <div className='cart__section'>
             < PageBanner {...cartBanner} />
@@ -48,23 +63,23 @@ const Cart = () => {
                         <thead>
                             <tr>
                                 <td>Cart Subtotal</td>
-                                <td>$ 335</td>
+                                <td>$ {calculateTotal()}</td>
                             </tr>
                             <tr>
                                 <td>Shipping</td>
-                                <td>Free</td>
+                                <td>{shippingFee === 0 ? <h3>Free</h3> : `$ ${shippingFee}`}</td>
                             </tr>
                             <tr>
                                 <td><strong>Total</strong></td>
-                                <td><strong>$ 335</strong></td>
+                                <td><strong>$ {calculateOverallTotal()}</strong></td>
                             </tr>
                         </thead>
                     </table>
-                    <button>Proceed to checkout</button>
+                    <Link to='checkout' className='link'><button>Proceed to checkout</button></Link>
                 </div>
             </section>
         </div >
     )
 }
 
-export default Cart
+export default Cart;
