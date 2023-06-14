@@ -110,7 +110,7 @@ const Payment = () => {
                                 </label>
                             </div>
                             <div className={`input__container ${formData.name || inputFocused[1] ? 'has__value' : ''}`}>
-                                <input type="number" className={`input__field ${inputFocused[1] ? 'focused' : ''}`}
+                                <input type="text" className={`input__field ${inputFocused[1] ? 'focused' : ''}`}
                                     onFocus={() => handleInputFocus(1)}
                                     onBlur={() => handleInputBlur(1)}
                                     value={formData.name}
@@ -202,7 +202,7 @@ const Payment = () => {
                     </div>
                 </div>
             </div>
-            <Link to='delivery' className='link'><button className='checkout__btn'>Continue</button></Link>
+            <Link to='' className='link'><button className='checkout__btn'>Pay $220</button></Link>
         </div>
     )
 }

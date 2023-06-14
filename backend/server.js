@@ -1,31 +1,34 @@
-import express from 'express'
+import express from 'express';
 import mongoose from 'mongoose';
-import dotenv from 'dotenv'
-import cors from 'cors'
+import dotenv from 'dotenv';
+import cors from 'cors';
+
 dotenv.config();
 const port = process.env.PORT || 5000;
 
-import productRoute from './routes/productRoute.js'
+import productRoute from './routes/productRoute.js';
 
 const app = express();
-mongoose.set('strictQuery', true)
-
 
 const connect = async () => {
-    try {
-        await mongoose.connect(process.env.MONGO);
-        console.log('Connected successfully to MongoDB')
-    } catch (error) {
-        console.log(error);
-    }
-}
+  try {
+    await mongoose.connect(process.env.MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log('Connected successfully to MongoDB');
+  } catch (error) {
+    console.error('Error connecting to MongoDB:', error);
+  }
+};
 
 app.use(express.json());
-app.use(cors({origin: "http://localhost:5173"}))
+app.use(cors({ origin: 'http://localhost:5173' }));
 
-app.use("/api/products", productRoute)
+app.use('/api/products', productRoute);
 
-app.listen(port , () => {
-    connect();
-    console.log(`Server running on http://localhost:${port}`)
-})
+app.listen(port, () => {
+  connect();
+  console.log(`Server running on http://localhost:${port}`);
+});
+ 

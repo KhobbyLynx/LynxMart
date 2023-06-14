@@ -19,6 +19,7 @@
                 align-items: center;
                 justify-content: space-between;
                 width: 50%;
+                gap: 20px;
             }
             hr{
                 margin-top: 40px;
@@ -37,7 +38,7 @@
         }
 
         .checkout__order {
-            padding: 50px 120px 20px 20px;
+            padding: 50px 30px 20px;
             width: 40%;
             background-color: #F5F5F5;
         }

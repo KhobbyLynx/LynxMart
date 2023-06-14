@@ -1,7 +1,8 @@
 import React from 'react';
 import './Checkout.scss';
-import { Link, NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import CopyRight from '../../components/copyRight/CopyRight';
+import OrderCard from '../../components/orderCard/OrderCard';
 
 const Checkout = () => {
   const activeStyles = {
@@ -25,6 +26,7 @@ const Checkout = () => {
       </div>
       <div className='checkout__order'>
         <h6 className='ch6'>Your Order</h6>
+        <OrderCard/>
       </div>
     </div>
   )

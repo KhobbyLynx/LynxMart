@@ -1,0 +1,100 @@
+.order__container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .product__details{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .product__img{
+            position: relative;
+            width: 60px;
+
+            img{
+                width: 100%;
+            }
+            p{
+                font-size: 14px;
+                color: #fff;
+                position: absolute;
+                top: -15px;
+                right: -15px;
+                background-color: #000;
+                border-radius: 50%;
+                font-size: 12px;
+                font-weight: 500;
+                padding: 8px;
+            }
+        }
+        span{
+            font-size: 12px;
+        }
+        h6{
+            font-size: 13px;
+            font-weight: 400;
+        }
+    }
+    .order__code{
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+        input{
+            width: 76%;
+            border: 1px solid #d5d5d5;
+            padding: 5px;
+            outline: none;
+            
+            &::placeholder{
+                font-size: 12px;
+            }
+        }
+        button{
+            width: 80px;
+            border: none;
+            border-radius: 5px;
+            background: #06D0B8;
+            color: #fff;
+            font-size: 12px;
+            padding: 8px;
+
+        }
+    }
+    .order__details{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 20px;
+        .order__cost{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            p{
+                font-size: 13px;
+                font-weight: 400;
+            }
+            span{
+                font-size: 13px;
+                font-weight: 500;
+            }
+        }
+        .order__total{
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            h3{
+                font-size: 13px;
+                font-weight: 600;
+            }
+            h6{
+                font-size: 15px;
+                font-weight: 600;
+                span{
+                    padding-right: 10px;
+                    font-size: 10px;
+                    color: #97938e;
+                }
+            }        
+        }
+    }
+}   

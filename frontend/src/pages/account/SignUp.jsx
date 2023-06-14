@@ -16,7 +16,7 @@ const SignUp = () => {
     <div className='other__link'>
       <div className='link__header'>
         <hr />
-        <span>Already hava an account?</span>
+        <span>Already have an account?</span>
         <hr />
       </div>
     <Link to='/account/login'><button>Log In</button></Link>
