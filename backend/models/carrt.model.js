@@ -1,13 +1,8 @@
 import mongoose from "mongoose";
 const { Schema } = mongoose;
 
-const productSchema = new Schema({
+const cartSchema = new Schema({
   name: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  brandName: {
     type: String,
     required: true,
     trim: true,
@@ -16,26 +11,6 @@ const productSchema = new Schema({
     type: Number,
     required: true,
     min: 0,
-  },
-  description: {
-    type: String,
-    required: true,
-  },
-  category: {
-    type: String,
-    enum: ["Electronics", "Clothing", "Books", "Beauty", "Other"],
-    required: true,
-  },
-  rating: {
-    type: Number,
-    min: 0,
-    max: 5,
-    default: 0,
-  },
-  reviewCount: {
-    type: Number,
-    min: 8,
-    default: 8,
   },
   quantity: {
     type: Number,
@@ -57,4 +32,4 @@ function arrayMinLength(val) {
   return val.length >= 1; // Checks if the length of the "images" array is at least 1
 }
 
-export default mongoose.model("Product", productSchema);
+export default mongoose.model("Cart", cartSchema);
