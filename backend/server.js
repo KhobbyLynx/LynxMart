@@ -31,6 +31,12 @@ app.use("/api/cart", productRoute);
 app.use("/api/wishlist", productRoute);
 app.use("/api/paystack", paymentRoute);
 
+app.get("/", async (req, res) => {
+  res.status(200).send({
+    message: "Hello from Lynxmart",
+  });
+});
+
 app.listen(port, () => {
   connect();
   console.log(`Server running on http://localhost:${port}/api`);
