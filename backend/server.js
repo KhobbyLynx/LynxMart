@@ -27,6 +27,8 @@ app.use(express.json());
 app.use(cors({ origin: "http://localhost:5173" }));
 
 app.use("/api/products", productRoute);
+app.use("/api/cart", productRoute);
+app.use("/api/wishlist", productRoute);
 app.use("/api/paystack", paymentRoute);
 
 app.listen(port, () => {
