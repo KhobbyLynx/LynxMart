@@ -81,6 +81,9 @@
                     }
                     span{
                         font-size: 12px;
+                        padding: 0 5px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                     }
                     h6{
                         font-size: 13px;
