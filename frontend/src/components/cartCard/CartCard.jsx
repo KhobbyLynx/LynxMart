@@ -27,7 +27,7 @@ const CartCard = ({ id, image, name, price }) => {
     justifyContent: "center",
   };
 
-  const subTotalFormatted = subTotal.toLocaleString(undefined, {
+  const subTotalFormatted = (quantity*price).toLocaleString(undefined, {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   });
