@@ -27,6 +27,8 @@ tr {
         &:nth-child(3) {
             width: 250px;
             text-align: center;
+            overflow: hidden;
+            text-overflow: ellipses;
         }
 
         &:nth-child(4),
