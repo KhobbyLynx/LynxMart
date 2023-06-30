@@ -5,7 +5,7 @@
     align-items: center;
     background-repeat: repeat;
     background-position: left;
-    background-color: #088178;
+    background-color: var(--newletter-bg);
     padding: 20px 60px;
     height: 200px;
 
@@ -17,18 +17,18 @@
         h4 {
             font-size: 22px;
             font-weight: 700;
-            color: #fff;
+            color: var(--cl-white);
         }
         
         p {
             font-size: 14px;
             font-weight: 600;
-            color: #f1f1f1;
+            color: var(--cl-gray-200);
             padding: 15px 0;
         }
         
         span {
-            color: #ffbd27;
+            color: var(--cl-span);
             padding: 3px;
         }
     }
@@ -53,11 +53,14 @@
             outline: none;
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
+            &::placeholder{
+                color: var(--cl-gray-400);
+            }
         }
         
         button {
-            background-color: #D65E05;
-            color: #fff;
+            background-color: var(--cl-orange-400);
+            color: var(--cl-gray-100);
             white-space: nowrap;
             font-size: 14px;
             font-weight: 600;

@@ -1,6 +1,7 @@
 .navbar{
-    background-color: #999;
-    padding: 10px 80px;
+    background-color: var(--cl-gray-500);
+
+    padding: 10px 40px;
     
     @media screen and (max-width: '999px') {
         padding-bottom: 16px;
@@ -18,14 +19,14 @@
             .navbar__left{
                 .menu__icon{
                     font-size: 38px;
-                    color: #000;
+                    color: var(--cl-black);
                     margin-right: 10px;
                     @media screen and (min-width: '999px') {
                         display: none;
                     }
                 }
                 .navbar__logo{
-                    width: 68px;
+                    width: 48px;
                     height: auto;
                 }
             }
@@ -44,13 +45,13 @@
                     gap: 6px;
                     font-size: 16px;
                     background-color: transparent;
-                    color: #000;
+                    color: var(--cl-black);
                     border: none;
                     cursor: pointer;
                     .user__icon{
                         font-size: 22px;
                         @media screen and (max-width: '999px') {
-                            color: #000;
+                            color: var(--cl-black);
                             font-size: 28px;
                         }
                     }
@@ -60,20 +61,73 @@
                         }
                     }
                 }
+                .user__acc{
+                    gap: 10px;
+                    position: relative;
+                    background-color: var(--cl-gray-200);
+                    border-radius: 10px;
+                    border: none;
+                    padding: 3px 10px;
+                    cursor: pointer;
+                    .profile__img{
+                        width: 30px;
+                        height: 30px;
+                        object-fit: cover;
+                        border-radius: 50%;
+                        border: 1px solid var(--cl-orange-400);
+                        justify-content: center;
+                        font-size: 20px;
+                        font-weight: 600;
+                    }
+                    span{
+                        font-size: 12px;
+                        color: var(--cl-black);
+                    }
+                }
+                .dropdown{
+                    position: absolute;
+                    top: 63px;
+                    right: 100px;
+                    font-size: 12px;
+                    color: var(--cl-gray-800);
+                    background-color: var(--cl-gray-300);
+                    box-shadow: 2px 2px 1px var(--cl-bs-03);
+                    z-index: 99;
+                    padding: 10px 30px;
+                    display: flex;
+                    flex-direction: column;
+                    span{
+                        padding-bottom: 16px;
+                        cursor: pointer;
+                    }
+                    button{
+                        cursor: pointer;
+                        background-color: var(--cl-orange-400);
+                        padding: 5px;
+                        font-size: 12px;
+                        color: var(--cl-black);
+                        border: none;
+                        transition: all 0.3s;
+                        &:hover{
+                            background-color: var(--cl-orange-500);
+                        }
+                    }
+                }
                 .navbar__cart{
                     background-color: transparent;
                     border: none;
                     cursor: pointer;
                     position: relative;
-                    img{
-                        width: 22px;
+                    .cart__icon{
+                        font-size: 20px;
+                        color: var(--cl-gray-800);
                     }
                 }
             }
         }
         .line{
             margin: 5px 0 10px;
-            border: 1px solid #0000006a;
+            border: 1px solid var(--cl-gray-700);
             @media screen and (min-width: '999px') {
                 display: none !important;
                 z-index: 999;
@@ -87,7 +141,7 @@
     }
 
     .navbar__line{
-        border: 1px solid #444;
+        border: 1px solid var(--cl-gray-700);
         width: 100%;
         margin-top: 5px;
         @media screen and (max-width: '999px') {
@@ -125,12 +179,12 @@
         }
         .navlink{
             text-decoration: none;
-            color: #000;
+            color: var(--cl-black);
             text-transform: capitalize;
         }
     }
     .menu__container{
-        background-color: #D65E05;
+        background-color: var(--primary-color);
         position: absolute;
         width: 90%;
         height: 100%;
@@ -145,7 +199,7 @@
         gap: 30px;
         
         .menu__link{
-            color: #303431;
+            color: var(--cl-gray-800);
             text-transform: capitalize;
         }
     }

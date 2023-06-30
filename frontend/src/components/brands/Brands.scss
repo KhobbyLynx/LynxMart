@@ -1,6 +1,6 @@
 .brands__container{
     padding: 30px;
-    background-color: #03D0B6;
+    background-color: var(--secondary-color);
 
     @media screen and (max-width: '277px') {
         display: none;
@@ -15,7 +15,7 @@
         }
         .brands__header{
             border-top-right-radius: 30px;
-            background-color: #DC6608;
+            background-color: var(--cl-orange-400);
             padding: 20px 30px;
 
             @media screen and (max-width: '699px') {
@@ -25,14 +25,14 @@
             h4{
                 font-size: 20px;
                 font-weight: 400;
-                color: #f1f1f1;
+                color: var(--h4-color);
                 @media screen and (max-width: '699px') {
                     font-size: 16px;
                 }
             }
         }
         .brand__logos{
-            background-color: #fff;
+            background-color: var(--cl-gray-200);
             border-bottom-left-radius: 30px;
             padding: 30px;
 

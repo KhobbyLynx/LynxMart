@@ -29,18 +29,18 @@
             }
             h2{
                 font-size: 20px;
-                color: #D65E05;
+                color: var(--cl-orange-400);
             }
             p{
                 font-size: 16px;
-                color: #777;
+                color: var(--cl-gray-700);
                 margin: 15px  0 20px 0;
             }
             .blog__link{
                 text-decoration: none;
                 font-size: 12px;
                 text-transform: uppercase;
-                color: #06d0b9a2;
+                color: var(--secondary-color);
                 font-weight: 600;
                 position: relative;
                 transition: 0.3s;
@@ -48,15 +48,15 @@
                     content: "";
                     width: 50px;
                     height: 2px;
-                    background-color: #06d0b9a2;
+                    background-color: var(--secondary-color);
                     position: absolute;
                     top: 5px;
                     right: -60px;
                 }
                 &:hover{
-                    color: #999;
+                    color: var(--cl-gray-700);
                     &::after{
-                        background-color: #999;
+                        background-color: var(--cl-gray-700);
                     }
                 }
             }
@@ -67,7 +67,7 @@
             left: 0;
             font-size: 70px;
             font-weight: 700;
-            color: #06d0b9a2;
+            color: var(--secondary-color);
             z-index: -9;
         }
     }

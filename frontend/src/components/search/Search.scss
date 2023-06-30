@@ -2,24 +2,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
-    input{
+    .search__container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
         max-width: 600px;
         width: 460px;
         height: 40px;
-        border: 1px solid #06D0B8;
+        border: 1px solid var(--cl-orange-400);
         border-radius: 5px 0 0 5px;
-        background-color: #444444e8;
-        padding-left: 30px;
-        color: #fff;
-        font-size: 14px;
-        font-weight: 200;
-        outline: none;
-        
-        &::placeholder{
-            font-weight: 100;
-            color: rgba(255, 255, 255, 0.5);
-        }
+        background-color: var(--cl-gray-600);
+
         @media screen and (max-width: '999px') {
             width: 100%;
             max-width: 100%;
@@ -27,7 +21,29 @@
         @media screen and (max-width: '420px') {
             padding-left: 12px;
         }
-
+        .search__input{
+            border: none;
+            background-color: var(--cl-gray-600);
+            width: 90%;
+            height: 100%;
+            padding-left: 10px;
+            color: var(--cl-white);
+            font-size: 14px;
+            font-weight: 200;
+            outline: none;
+            
+            &::placeholder{
+                padding-left: 0;
+                font-weight: 100;
+                color: var(--cl-gray-400);
+            }
+        }
+        .clear__search{
+            color: var(--cl-gray-100);
+            font-size: 18px;
+            font-weight: 900;
+            margin-right: 5px;
+        }
     }
     button{
         display: flex;
@@ -39,10 +55,14 @@
         height: 40px;
         border: none;
         border-radius: 0 5px 5px 0;
-        color: #030603;
-        background-color: #06D0B8;
+        color: var(--cl-gray-900);
+        background-color: var(--cl-orange-400);
         font-size: 14px;
         font-weight: 400;
+        transition: 0.5s all;
+        &:hover{
+            background-color: var(--cl-orange-300);
+        }
         .search__icon{
             font-size: 18px;
         }

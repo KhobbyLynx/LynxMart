@@ -45,7 +45,7 @@
             }
             p{
                 font-size: 16px;
-                color: #465b52;
+                color: var(--cl-gray-700);
                 margin: 15px  0 20px 0;
                 line-height: 20px;
                 @media screen and (max-width: '1120px') {
@@ -87,12 +87,12 @@
             font-size: 50px;
             font-weight: 600;
             line-height: 64px;
-            color: #222;
+            color: var(--cl-gray-800);
             @media screen and (max-width: '577px') {
                 font-size: 38px;
             }
             a{
-                color: #a51e88;
+                color: var(--cl-orange-500);
             }
         }
         .video__box{

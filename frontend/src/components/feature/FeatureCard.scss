@@ -5,8 +5,8 @@
         align-items: center;
         text-align: center;
         padding: 25px 15px;
-        box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
-        border: 1px  solid #cce7d0;
+        box-shadow: 20px 20px 34px var(--cl-bs-03);
+        border: 1px  solid var(--cl-gray-300);
         border-radius: 4px;
         margin: 15px 0;
 
@@ -24,8 +24,8 @@
             display: inline-block;
             padding: 9px 8px 6px 8px;
             line-height: 1;
-            color: #088178;
-            background-color: #fddde4;
+            color: var(--secondary-color);
+            background-color: var(--cl-gray-200);
             border-radius: 4px;
         }
     }

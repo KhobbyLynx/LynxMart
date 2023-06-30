@@ -6,8 +6,8 @@
             margin: 20px 0;
             label{
                 font-size: 13px;
-                background-color: #fff;
-                color: #75757a;
+                background-color: var(--cl-white);
+                color: var(--cl-gray-700);
                 padding: 0 4px;
                 position: absolute;
                 top: -10px;
@@ -15,14 +15,14 @@
             }
             input, select{
                 width: 100%;
-                outline-color: #EF8B33;
+                outline-color: var(--cl-orange-300);
                 padding: 14px;
                 border-radius: 4px;
                 appearance: none;
-                border: 1px solid #75757a;
+                border: 1px solid var(--cl-gray-700);
                 font-size: 16px;
                 font-weight: 300;
-                color: #000;
+                color: var(--cl-black);
             }
             .phone{
                 display: flex;

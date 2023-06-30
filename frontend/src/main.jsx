@@ -1,17 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { Provider } from 'react-redux';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { Provider } from 'react-redux'
 
-import App from './App.jsx';
-import './index.css';
-import './slick/slick.css';
-import "./slick/slick-theme.css";
-import store from './store/index.js';
+import App from './App.jsx'
+import '../src/scss/style.scss'
+import './index.css'
+import './slick/slick.css'
+import './slick/slick-theme.css'
+import store from './store/index.js'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>,
+ <React.StrictMode>
+  <Provider store={store}>
+   <App />
+  </Provider>
+ </React.StrictMode>
 )

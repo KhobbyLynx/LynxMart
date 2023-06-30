@@ -28,10 +28,10 @@
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: -5px;
+  top: -8px;
   right: -12px;
   color: #000;
-  background-color: aquamarine;
+  background-color: var(--cl-orange-400);
   border-radius: 50%;
   width: 20px;
   height: 20px;
@@ -149,4 +149,8 @@
   color: #fff;
   text-transform: uppercase;
   margin-top: 10px;
+}
+
+.hide{
+  display: none;
 }

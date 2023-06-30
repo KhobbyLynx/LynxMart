@@ -1,7 +1,7 @@
 tr {
     td {
         font-size: 14px;
-        color: #444;
+        color: var(--cl-gray-700);
         padding-top: 15px;
 
         &:nth-child(1) {
@@ -9,7 +9,7 @@ tr {
             text-align: center;
 
             .remove__icon {
-                color: red;
+                color: var(--cl-red);
                 font-size: 16px;
             }
         }

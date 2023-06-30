@@ -5,17 +5,23 @@
     flex-direction: column;
     min-height: 100vh;
     h2{
-        color: #D65E05;
+        color: var(--cl-orange-600);
         font-size: 23px;
+        @media screen and (max-width: '620px') {
+            font-size: 18px;
+        }
     }
     p{
-        color: #666;
+        color: var(--cl-gray-600);
         font-size: 13px;
         text-align: center;
     }
     img{
-        width: 80px;
+        width: 60px;
         margin: 20px;
+        @media screen and (max-width: '620px') {
+           width: 50px;
+        }
     }
     .account__form{
         flex: 1;
@@ -24,10 +30,21 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #444;
+        background: var(--cl-gray-300);
         width: 100%;
         margin-top: auto;
         padding: 8px;
+    }
+}
+.sign__up{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p{
+        @media screen and (max-width: '357px') {
+            font-size: 12px;
+         }
     }
 }
 
@@ -36,36 +53,52 @@ fieldset{
     text-align: center;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     gap: 10px;
     min-width: 500px;
-    border: 1px solid #06D0B8;
+    border: 1px solid var(--secondary-color);
     border-radius: 5px;
+    @media screen and (max-width: '620px') {
+        min-width: 200px;
+        width: 400px;
+     }
+     @media screen and (max-width: '477px') {
+        min-width: 150px;
+        width: 350px;
+     }
+     @media screen and (max-width: '357px') {
+        min-width: 100px;
+        width: 280px;
+     }
     h6{
-        color: #000;
+        color: var(--cl-black);
     }
 
     legend{
         padding: 20px;
         font-size: 18px;
-        color: #666;
+        color: var(--cl-gray-600);
     }
 
-    input, button{
+    input, button, select{
         width: 80%;
         padding: 8px;
         margin-bottom: 20px;
         outline: none;
-        border: 1px solid #999;
+        border: 1px solid var(--cl-gray-400);
         &::placeholder{
             font-size: 14px;
         }
     }
 
     button{
-        background-color: #06D0B8;
-        border: 1px solid #06D0B8;
-        color: #000;
+        background-color: var(--cl-orange-400);
+        border: 1px solid var(--cl-gray-400);
+        color: var(--cl-black);
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 500;
     }
     p{
         width: 80%;
@@ -73,21 +106,45 @@ fieldset{
 }
 
 .other__link{
+    min-width: 300px;
+    width: 500px;
+    @media screen and (max-width: '620px') {
+        min-width: 200px;
+        width: 400px;
+     }
+     @media screen and (max-width: '477px') {
+        min-width: 150px;
+        width: 350px;
+     }
+     @media screen and (max-width: '357px') {
+        min-width: 100px;
+        width: 280px;
+     }
     .link__header{
         display: flex;
         justify-content: space-between;
         padding: 50px 0 30px;
         span{
             font-size: 16px;
-            color: #444;
+            color: var(--cl-gray-600);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            @media screen and (max-width: '477px') {
+               font-size: 13px;
+             }
         }
         hr{
             width: 30%;
             height: 0px;
             border: none;
-            border-bottom: 1px solid #06D0B8;
+            border-bottom: 1px solid var(--secondary-color);
             margin-top: auto;
             margin-bottom: auto;
+            @media screen and (max-width: '677px') {
+                width: 20%;
+              }
         }
     }
     button{
@@ -96,8 +153,8 @@ fieldset{
         margin-bottom: 50px;
         outline: none;
         background-color: transparent;
-        border: 1px solid #999;
-        color: #666;
+        border: 1px solid var(--cl-gray-400);
+        color: var(--cl-gray-600);
         border-radius: 5px;
         &::placeholder{
             font-size: 14px;

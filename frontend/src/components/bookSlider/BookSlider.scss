@@ -1,5 +1,5 @@
 .item__slider{
-    background-color: #03D0B6;
+    background-color: var(--secondary-color);
     padding: 30px;
 
     .slick__container{
@@ -38,7 +38,7 @@
     top: 36%;
     z-index: 99;
     font-size: 48px;
-    color: #19652E;
+    color: var(--cl-green-800);
     cursor: pointer;
     @media screen and (max-width: '699px') {
         top: 28%;

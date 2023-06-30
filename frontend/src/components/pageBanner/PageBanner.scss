@@ -1,5 +1,5 @@
 .page__banner{
-    height: 300px;
+    height: 200px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -8,10 +8,10 @@
     text-align: center;
     h2{
         font-size: 32px;
-        color: #f1f1f1;
+        color: var(--cl-gray-200);
     }
     p{
         font-size: 16px;
-        color: #f1f1f1;
+        color: var(--cl-gray-200);
     }
 }
