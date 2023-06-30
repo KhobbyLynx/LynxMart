@@ -47,6 +47,16 @@ const SignUp = () => {
    return (
       <section className='sign__up'>
          <p>Type your Email and Password to create an account</p>
+         <div className='other__link'>
+            <div className='link__header'>
+               <hr />
+               <span>Already have an account?</span>
+               <hr />
+            </div>
+            <Link to='/account/login'>
+               <button>Log In</button>
+            </Link>
+         </div>
          <fieldset className='account__login'>
             <legend>Create account</legend>
             <input
@@ -123,14 +133,6 @@ const SignUp = () => {
             </p>
          </fieldset>
          <div className='other__link'>
-            <div className='link__header'>
-               <hr />
-               <span>Already have an account?</span>
-               <hr />
-            </div>
-            <Link to='/account/login'>
-               <button>Log In</button>
-            </Link>
             <p>
                For further support, you may visit the <Link>Help Center</Link>{' '}
                or contact our customer service team.

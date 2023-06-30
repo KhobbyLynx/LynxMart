@@ -50,6 +50,7 @@
 
 fieldset{
     padding: 20px 0;
+    margin-bottom: 20px;
     text-align: center;
     display: flex;
     align-items: center;
@@ -94,8 +95,9 @@ fieldset{
 
     button{
         background-color: var(--cl-orange-400);
-        border: 1px solid var(--cl-gray-400);
-        color: var(--cl-black);
+        border: 1px solid var(--cl-orange-400);
+        color: var(--cl-gray-100);
+        border-radius: 5px;
         text-transform: uppercase;
         font-size: 12px;
         font-weight: 500;
@@ -123,7 +125,7 @@ fieldset{
     .link__header{
         display: flex;
         justify-content: space-between;
-        padding: 50px 0 30px;
+        padding: 30px 0 20px;
         span{
             font-size: 16px;
             color: var(--cl-gray-600);
@@ -150,11 +152,11 @@ fieldset{
     button{
         width: 100%;
         padding: 10px;
-        margin-bottom: 50px;
+        margin-bottom: 20px;
         outline: none;
-        background-color: transparent;
-        border: 1px solid var(--cl-gray-400);
-        color: var(--cl-gray-600);
+        background-color: var(--secondary-color);
+        border: 1px solid var(--secondary-color);
+        color: var(--cl-gray-100);
         border-radius: 5px;
         &::placeholder{
             font-size: 14px;
@@ -163,6 +165,6 @@ fieldset{
     p{
         width: 80%;
         margin: auto;
-        padding-bottom: 50px;
+        padding-bottom: 20px;
     }
 }

@@ -84,20 +84,23 @@
             display: grid;
                 align-items: center;
                 justify-content: center;
-                grid-template-columns: repeat( auto-fit , minmax(180px, 250px));
+                grid-template-columns: repeat( auto-fit , minmax(180px, 200px));
                 gap: 20px;
                 
-                @media screen and (max-width: '877px') {
-                    grid-template-columns: repeat( auto-fit , minmax(160px, 1fr));
+                @media screen and (max-width: '999px') {
+                    grid-template-columns: repeat( auto-fit , minmax(180px, 1fr));
                     gap: 10px;
                     padding: 30px;
                 }
                 @media screen and (max-width: '500px') {
-                    grid-template-columns: repeat( auto-fit , minmax(150px, 1fr));
                     gap: 20px;
                     padding: 20px;
                 }
                 @media screen and (max-width: '477px') {
+                    grid-template-columns: repeat( auto-fit , minmax(120px, 1fr));
+                    padding: 10px;
+                }
+                @media screen and (max-width: '300px') {
                     grid-template-columns: repeat( auto-fit , minmax(100px, 1fr));
                     padding: 10px;
                 }

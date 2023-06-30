@@ -1,90 +1,120 @@
-.single__product{
-    padding: 40px 40px;
-    h2,h4,h6,select,input,span,button,p{
-        font-family: 'League Spartan', sans-serif;
-    }
-    .product__detail {
-        display: flex;
-        .product__image {
-            width: 40%;
-            margin-right: 50px;
-            .group__images {
-                display: flex;
-                justify-content: space-between;
-                .group__col {
-                    flex-basis: 24%;
-                    cursor: pointer;
-                }
-            }
+    .single__product{
+        padding: 40px;
+        h2,h4,h6,select,input,span,button,p{
+            font-family: 'League Spartan', sans-serif;
         }
-        .prodetails {
-            width: 50%;
-            h6{
-                font-weight: 700;
-                font-size: 14px;
-            }
-            h4{
-                padding: 40px 0 20px 0;
-                font-size: 20px;
-                color: var(--cl-gray-800);
-                font-family: 'League Spartan', sans-serif;
-            }
-            h2 {
-                font-size: 26px;
-            }
-            select {
-                display: block;
-                padding: 3px 10px;
-                margin-bottom: 10px;
-                &:focus{
-                    outline: none;
-                }
-            }
-            input {
-                width: 50px;
-                height: 47px;
-                padding-left: 10px;
-                font-size: 16px;
-                margin-right: 10px;
-                &:focus {
-                    outline: none;
-                }
-            }
-            button {
-                background-color: var(--cl-orange-400);
-                color: var(--cl-white);
-                font-size: 14px;
-                font-weight: 600;
-                padding: 15px 30px;
-                border-radius: 4px;
-                cursor: pointer;
-                border: none;
-                outline: none;
-                transition: 0.2s;
-            }
-            span {
-                line-height: 25px;
-            }
+        @media screen and (max-width: '677px') {
+            padding:  10px 20px;
         }
-    }
-    .featured__products{
-        padding: 100px 0;
-      text-align: center;
-        h2 {
-            font-size: 46px;
-            line-height: 54px;
-            color: var(--cl-gray-800);
-        }
-        p {
-            font-size: 16px;
-            color: var(--cl-gray-700);
-            margin: 15px  0 20px 0;
-        }
-        .pro__container {
+        .product__detail {
             display: flex;
-            justify-content: space-between;
-            padding-top: 20px;
-            flex-wrap: wrap;
+            @media screen and (max-width: '677px') {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            .product__image {
+                width: 40%;
+                margin-right: 50px;
+                @media screen and (max-width: '677px') {
+                    width: 100%;
+                    margin-right: 0;
+                    margin-bottom: 50px;
+                }
+
+                .group__images {
+                    display: flex;
+                    justify-content: space-between;
+                    .group__col {
+                        flex-basis: 24%;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .prodetails {
+                width: 50%;
+                @media screen and (max-width: '677px') {
+                    width: 100%;
+                }
+                h6{
+                    font-weight: 700;
+                    font-size: 14px;
+                }
+                h4{
+                    padding: 40px 0 20px 0;
+                    font-size: 20px;
+                    color: var(--cl-gray-800);
+                    font-family: 'League Spartan', sans-serif;
+                }
+                h2 {
+                    font-size: 26px;
+                }
+                select {
+                    display: block;
+                    padding: 3px 10px;
+                    margin-bottom: 10px;
+                    &:focus{
+                        outline: none;
+                    }
+                }
+                input {
+                    width: 50px;
+                    height: 47px;
+                    padding-left: 10px;
+                    font-size: 16px;
+                    margin-right: 10px;
+                    &:focus {
+                        outline: none;
+                    }
+                }
+                button {
+                    background-color: var(--cl-orange-400);
+                    color: var(--cl-white);
+                    font-size: 14px;
+                    font-weight: 600;
+                    padding: 15px 30px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    border: none;
+                    outline: none;
+                    transition: 0.2s;
+                }
+                span {
+                    line-height: 25px;
+                }
+            }
+        }
+        .featured__products{
+            padding: 50px 0;
+        text-align: center;
+        
+            h2 {
+                font-size: 46px;
+                line-height: 54px;
+                color: var(--cl-gray-800);
+            }
+            p {
+                font-size: 16px;
+                color: var(--cl-gray-700);
+                margin: 15px  0 20px 0;
+            }
+            .pro__container {
+                display: grid;
+                align-items: center;
+                justify-content: center;
+                grid-template-columns: repeat( auto-fit , minmax(180px, 1fr));
+                gap: 20px;
+                
+                @media screen and (max-width: '1120px') {
+                    grid-template-columns: repeat( auto-fit , minmax(150px, 1fr));      
+                    gap: 10px;
+                }
+                @media screen and (max-width: '500px') {
+                    grid-template-columns: repeat( auto-fit , minmax(120px, 1fr));      
+                }
+                @media screen and (max-width: '377px') {
+                    grid-template-columns: repeat( auto-fit , minmax(100px, 1fr));
+                }
+            }
         }
     }
-}
