@@ -1,19 +1,15 @@
-import { useState, useEffect } from 'react'
+import React from 'react'
 import { Link, useLoaderData } from 'react-router-dom'
-import newRequest from '../../utils/newRequest'
 import Hero from '../hero/Hero'
 import './Home.scss'
 import Category from '../../components/category/Category'
 import BookSlider from '../../components/bookSlider/BookSlider'
 import ProductCard from '../../components/products/ProductCard'
 import Brands from '../../components/brands/Brands'
+import { getProducts } from '../../utils/api'
 
 export function loader() {
-   const fetchData = async () => {
-      const response = await newRequest.get('/products')
-      return response.data
-   }
-   return fetchData()
+   return getProducts()
 }
 
 const Home = () => {

@@ -1,17 +1,13 @@
-import { useState, useEffect } from 'react'
+import React from 'react'
 import { MdOutlineSearchOff } from 'react-icons/md'
 import { Link, useSearchParams } from 'react-router-dom'
 import { useLoaderData } from 'react-router-dom'
 import './Shop.scss'
 import ProductCard from '../../components/products/ProductCard'
-import newRequest from '../../utils/newRequest'
+import { getProducts } from '../../utils/api'
 
 export function loader() {
-   const fetchData = async () => {
-      const response = await newRequest.get('/products')
-      return response.data
-   }
-   return fetchData()
+   return getProducts()
 }
 
 const Shop = () => {
