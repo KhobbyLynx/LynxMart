@@ -22,13 +22,19 @@ import Checkout from './pages/checkout/Checkout'
 import CheckoutForm from './components/checkoutForm/CheckoutForm'
 import Delivery from './components/delivery/Delivery'
 import Payment from './components/payment/Payment'
+import Error from './components/error/Error'
 
 function App() {
    const router = createBrowserRouter(
       createRoutesFromElements(
          <>
             <Route path='/' element={<MainLayout />}>
-               <Route index element={<Home />} loader={homePageLoader} />
+               <Route
+                  index
+                  element={<Home />}
+                  loader={homePageLoader}
+                  errorElement={<Error />}
+               />
                <Route path='shop' element={<Shop />} loader={shopPageLoader} />
                <Route path='blog' element={<Blog />} />
                <Route path='about' element={<About />} />

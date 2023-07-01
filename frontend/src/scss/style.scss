@@ -63,4 +63,8 @@
     font-size: 13px;
     font-weight: 600;
     color: var(--cl-red-400);
+    
+    &__code{
+      color: var(--cl-red-400);
+    }
   }
