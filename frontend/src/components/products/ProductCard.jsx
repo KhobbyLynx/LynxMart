@@ -1,10 +1,9 @@
 import React from 'react'
 import { BsCart3, BsStarFill, BsStar, BsStarHalf } from 'react-icons/bs'
 import './ProductCard.scss'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { cartActions } from '../../store/slices/cartSlice'
-import { ToastContainer, toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+import { toast } from 'react-toastify'
 
 const ProductCard = ({
    _id,
@@ -13,12 +12,15 @@ const ProductCard = ({
    price,
    rating,
    reviewCount,
-   category,
    quantity,
    images,
 }) => {
    const dispatch = useDispatch()
-   const addToCart = (e) => {
+   const inCart = useSelector((state) =>
+      state.cart.itemsList.some((item) => item.id === _id)
+   )
+
+   const handleClick = (e) => {
       e.preventDefault()
       dispatch(
          cartActions.addOrRemoveFromCart({
@@ -28,7 +30,11 @@ const ProductCard = ({
             image: images[0],
          })
       )
-      toast.success('Added to cart', {
+
+      const toastType = inCart ? 'error' : 'success'
+      const msg = inCart ? 'Item removed from cart' : 'Item added to cart'
+
+      toast[toastType](msg, {
          position: 'top-right',
          autoClose: 2000,
          hideProgressBar: false,
@@ -64,21 +70,6 @@ const ProductCard = ({
 
    return (
       <>
-         <div>
-            <ToastContainer
-               position='top-right'
-               autoClose={2000}
-               hideProgressBar={false}
-               newestOnTop
-               closeOnClick
-               rtl={false}
-               pauseOnFocusLoss={false}
-               draggable={false}
-               pauseOnHover
-               theme='light'
-               onClick={(e) => e.preventDefault()}
-            />
-         </div>
          <div className='product__container'>
             <div className='image__container'>
                {badgeText && <h6 className='product__badge'>{badgeText}</h6>}
@@ -92,7 +83,10 @@ const ProductCard = ({
                </div>
                <h4>${price}</h4>
             </div>
-            <div className='add__cart' onClick={addToCart}>
+            <div
+               className={`cartIcon ${inCart && 'addedCartIcon'}`}
+               onClick={handleClick}
+            >
                <BsCart3 className='cart__icon' />
             </div>
          </div>

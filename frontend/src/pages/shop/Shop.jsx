@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { MdOutlineSearchOff } from 'react-icons/md'
 import { Link, useSearchParams } from 'react-router-dom'
 import './Shop.scss'
 import ProductCard from '../../components/products/ProductCard'
@@ -52,8 +53,29 @@ const Shop = () => {
    return (
       <>
          {filteredProducts.length === 0 ? (
-            <div>
-               <h1>No products found</h1>
+            <div className='no-product-found'>
+               <div className='no-product-found__icon-container'>
+                  <MdOutlineSearchOff
+                     className='no-product-found__icon'
+                     size={64}
+                  />
+               </div>
+               <h6 className='no-product-found__title'>
+                  There are no results for "{searchFilter}"
+               </h6>
+               <div className='no-product-found__message'>
+                  <p>- Check your spelling for typing errors</p>
+                  <p>- Try searching with short and simple keywords</p>
+                  <p>
+                     - Try searching more general terms - you can then filter
+                     the search results
+                  </p>
+               </div>
+               <Link to='/'>
+                  <button className='no-product-found__btn'>
+                     go to homepage
+                  </button>
+               </Link>
             </div>
          ) : (
             <>

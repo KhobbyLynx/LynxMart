@@ -5,8 +5,6 @@ import ProductCard from '../products/ProductCard'
 import newRequest from '../../utils/newRequest'
 import { useDispatch, useSelector } from 'react-redux'
 import { cartActions } from '../../store/slices/cartSlice'
-import { ToastContainer, toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
 
 const ProductDetails = () => {
    const [products, setProducts] = useState([])
@@ -49,16 +47,6 @@ const ProductDetails = () => {
             image: product.images[0],
          })
       )
-      toast.success('Added to cart', {
-         position: 'top-right',
-         autoClose: 2000,
-         hideProgressBar: false,
-         closeOnClick: false,
-         pauseOnHover: true,
-         draggable: false,
-         progress: undefined,
-         theme: 'light',
-      })
    }
    const quantity = useSelector((state) => {
       const item = state.cart.itemsList.find((item) => item.id === params.id)
@@ -81,18 +69,6 @@ const ProductDetails = () => {
 
    return (
       <>
-         <ToastContainer
-            position='top-right'
-            autoClose={2000}
-            hideProgressBar={false}
-            newestOnTop
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss={false}
-            draggable={false}
-            pauseOnHover
-            theme='light'
-         />
          {product ? (
             <div className='single__product'>
                <div className='product__detail'>
