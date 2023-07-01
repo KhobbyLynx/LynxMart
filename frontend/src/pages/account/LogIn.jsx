@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import RingLoader from 'react-spinners/RingLoader'
 import newRequest from '../../utils/newRequest'
 
 const LogIn = () => {
    const navigate = useNavigate()
-   const [loading, setLoading] = useState(false)
+   const [isPending, setIsPending] = useState(false)
+   const [errorMsg, setErrorMsg] = useState('')
    const [formData, setFormData] = useState({
       email: '',
       password: '',
@@ -20,10 +21,34 @@ const LogIn = () => {
          }
       })
    }
+
+   useEffect(() => {
+      let timeId
+
+      if (errorMsg) {
+         timeId = setTimeout(() => {
+            setErrorMsg('')
+         }, 3000)
+      }
+
+      return () => {
+         clearTimeout(timeId)
+      }
+   }, [errorMsg])
+
    const handleSubmit = (event) => {
       event.preventDefault()
-      setLoading(true)
+
+      if (formData.password.length < 8) {
+         setErrorMsg('Incorrect password')
+         return
+      }
+
+      setIsPending(true)
+
       setTimeout(() => {
+         let loginSuccessful = true
+
          const request = async () => {
             try {
                const res = await newRequest.post('/users/login', {
@@ -32,12 +57,21 @@ const LogIn = () => {
                })
                localStorage.setItem('currentUser', JSON.stringify(res.data))
             } catch (error) {
-               console.log(error)
+               setIsPending(false)
+               loginSuccessful = false
+
+               if (error.response.data.includes('Invalid user credentials')) {
+                  setErrorMsg('Invalid user credentials')
+               }
+
+               return
             } finally {
-               navigate('/')
-               setTimeout(() => {
-                  setLoading(false)
-               }, 1000)
+               if (loginSuccessful) {
+                  navigate('/')
+                  setTimeout(() => {
+                     setIsPending(false)
+                  }, 3000)
+               }
             }
          }
          return request()
@@ -45,39 +79,44 @@ const LogIn = () => {
    }
    return (
       <>
-         {loading ? (
+         {isPending ? (
             <div className='request-loader'>
                <RingLoader color='#D65E05' loading size={100} />
             </div>
          ) : (
             <section>
                <p>Type your Email and Password to log in</p>
-               <fieldset className='account__login'>
-                  <legend>Sign In</legend>
-                  <input
-                     type='email'
-                     placeholder='Email'
-                     name='email'
-                     value={formData.email}
-                     onChange={handleChange}
-                  />
-                  <input
-                     type='password'
-                     placeholder='Password'
-                     name='password'
-                     value={formData.password}
-                     onChange={handleChange}
-                  />
-                  <button onClick={handleSubmit}>Continue</button>
-                  <Link to='/account/forgotpassword' className='link'>
-                     <h6>Forgot Password ?</h6>
-                  </Link>
-                  <p>
-                     By continuing, you agree to LynxMart's{' '}
-                     <Link>Conditions of Use</Link> and{' '}
-                     <Link>Privacy Notice</Link>.
-                  </p>
-               </fieldset>
+               <form onSubmit={handleSubmit}>
+                  <fieldset className='account__login'>
+                     <legend>Sign In</legend>
+                     <input
+                        type='email'
+                        placeholder='Email'
+                        name='email'
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                     />
+                     <input
+                        type='password'
+                        placeholder='Password'
+                        name='password'
+                        value={formData.password}
+                        onChange={handleChange}
+                        required
+                     />
+                     {errorMsg && <span className='error-msg'>{errorMsg}</span>}
+                     <button>Continue</button>
+                     <Link to='/account/forgotpassword' className='link'>
+                        <h6>Forgot Password ?</h6>
+                     </Link>
+                     <p>
+                        By continuing, you agree to LynxMart's{' '}
+                        <Link>Conditions of Use</Link> and{' '}
+                        <Link>Privacy Notice</Link>.
+                     </p>
+                  </fieldset>
+               </form>
                <div className='other__link'>
                   <div className='link__header'>
                      <hr />
