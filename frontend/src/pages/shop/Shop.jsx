@@ -1,10 +1,10 @@
 import React from 'react'
+import { useLoaderData } from 'react-router-dom'
+import { getProducts } from '../../utils/api'
 import { MdOutlineSearchOff } from 'react-icons/md'
 import { Link, useSearchParams } from 'react-router-dom'
-import { useLoaderData } from 'react-router-dom'
 import './Shop.scss'
 import ProductCard from '../../components/products/ProductCard'
-import { getProducts } from '../../utils/api'
 
 export function loader() {
    return getProducts()
