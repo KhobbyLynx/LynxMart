@@ -1,26 +1,22 @@
 import { useState, useEffect } from 'react'
 import { MdOutlineSearchOff } from 'react-icons/md'
 import { Link, useSearchParams } from 'react-router-dom'
+import { useLoaderData } from 'react-router-dom'
 import './Shop.scss'
 import ProductCard from '../../components/products/ProductCard'
 import newRequest from '../../utils/newRequest'
 
+export function loader() {
+   const fetchData = async () => {
+      const response = await newRequest.get('/products')
+      return response.data
+   }
+   return fetchData()
+}
+
 const Shop = () => {
-   const [products, SetProducts] = useState([])
    const [searchParams, setSearchParams] = useSearchParams()
-   useEffect(() => {
-      const fetchData = async () => {
-         try {
-            const response = await newRequest.get('/products')
-            SetProducts(response.data)
-         } catch (error) {
-            console.log('Error fetching products', error)
-         }
-      }
-
-      fetchData()
-   }, [])
-
+   const products = useLoaderData()
    const searchFilter = searchParams.get('q')
    const catFilter = searchParams.get('cat')
 
@@ -61,7 +57,7 @@ const Shop = () => {
                   />
                </div>
                <h6 className='no-product-found__title'>
-                  There are no results for "{searchFilter}"
+                  There are no results for "{searchFilter || catFilter}"
                </h6>
                <div className='no-product-found__message'>
                   <p>- Check your spelling for typing errors</p>

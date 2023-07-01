@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLoaderData } from 'react-router-dom'
 import newRequest from '../../utils/newRequest'
 import Hero from '../hero/Hero'
 import './Home.scss'
@@ -8,22 +8,16 @@ import BookSlider from '../../components/bookSlider/BookSlider'
 import ProductCard from '../../components/products/ProductCard'
 import Brands from '../../components/brands/Brands'
 
+export function loader() {
+   const fetchData = async () => {
+      const response = await newRequest.get('/products')
+      return response.data
+   }
+   return fetchData()
+}
+
 const Home = () => {
-   const [products, setProducts] = useState([])
-
-   useEffect(() => {
-      const fetchData = async () => {
-         try {
-            const response = await newRequest.get('/products')
-            setProducts(response.data)
-         } catch (error) {
-            console.error('Error fetching products:', error)
-         }
-      }
-
-      fetchData()
-   }, [])
-
+   const products = useLoaderData()
    const productsSetOne = products.slice(0, 8)
    const productsSetTwo = products.slice(8, 16)
 

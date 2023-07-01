@@ -51,4 +51,11 @@
         color: var(--cl-gray-100);
     }
   }
+
+  .request-loader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+  }
   
