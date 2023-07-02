@@ -1,5 +1,11 @@
 import React from 'react'
-import { BsCart3, BsStarFill, BsStar, BsStarHalf } from 'react-icons/bs'
+import {
+   BsCart3,
+   BsStarFill,
+   BsStar,
+   BsStarHalf,
+   BsCartCheck,
+} from 'react-icons/bs'
 import './ProductCard.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { cartActions } from '../../store/slices/cartSlice'
@@ -22,6 +28,7 @@ const ProductCard = ({
 
    const handleClick = (e) => {
       e.preventDefault()
+
       dispatch(
          cartActions.addOrRemoveFromCart({
             id: _id,
@@ -70,30 +77,37 @@ const ProductCard = ({
 
    return (
       <>
-         <div
-            className='product__container'
-            onClick={window.scrollTo({
-               top: 0,
-               left: 0,
-            })}
-         >
-            <div className='image__container'>
-               {badgeText && <h6 className='product__badge'>{badgeText}</h6>}
-               <img className='product__image' src={images[0]} alt={name} />
-            </div>
-            <div className='product__details'>
-               <span>{brandName}</span>
-               <h5>{name}</h5>
-               <div className='star'>
-                  {stars} <h6>({reviewCount})</h6>
+         <div className='product__container'>
+            <div
+               onClick={
+                  () =>
+                     setTimeout(() => {
+                        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+                     }, 600) // Delay of 1000 milliseconds (1 second)
+               }
+            >
+               <div className='image__container'>
+                  {badgeText && <h6 className='product__badge'>{badgeText}</h6>}
+                  <img className='product__image' src={images[0]} alt={name} />
                </div>
-               <h4>${price}</h4>
+               <div className='product__details'>
+                  <span>{brandName}</span>
+                  <h5>{name}</h5>
+                  <div className='star'>
+                     {stars} <h6>({reviewCount})</h6>
+                  </div>
+                  <h4>${price}</h4>
+               </div>
             </div>
             <div
                className={`cartIcon ${inCart && 'addedCartIcon'}`}
                onClick={handleClick}
             >
-               <BsCart3 className='cart__icon' />
+               {!inCart ? (
+                  <BsCart3 className='cart__icon' />
+               ) : (
+                  <BsCartCheck className='cart__icon' />
+               )}
             </div>
          </div>
       </>
