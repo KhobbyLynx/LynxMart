@@ -70,7 +70,13 @@ const ProductCard = ({
 
    return (
       <>
-         <div className='product__container'>
+         <div
+            className='product__container'
+            onClick={window.scrollTo({
+               top: 0,
+               left: 0,
+            })}
+         >
             <div className='image__container'>
                {badgeText && <h6 className='product__badge'>{badgeText}</h6>}
                <img className='product__image' src={images[0]} alt={name} />

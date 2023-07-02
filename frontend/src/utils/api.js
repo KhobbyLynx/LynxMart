@@ -1,7 +1,8 @@
 import newRequest from './newRequest'
 
-export async function getProducts() {
-   const res = await newRequest.get('/products')
+export async function getProducts(id) {
+   const url = id ? `/products/${id}` : '/products/'
+   const res = await newRequest.get(url)
    if (res.status !== 200) {
       throw {
          message: 'Failed to fetch products',

@@ -18,11 +18,6 @@ const Category = () => {
       }
    }
 
-   const handleClearSearch = () => {
-      searchParams.delete('cat')
-      setSearchParams(searchParams)
-   }
-
    return (
       <div className='category'>
          {categories.map((category) => (

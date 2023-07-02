@@ -12,7 +12,9 @@ import Blog from './pages/blog/Blog'
 import About from './pages/about/About'
 import Contact from './pages/contact/Contact'
 import Cart from './pages/cart/Cart'
-import ProductDetails from './components/productDetails/ProductDetails'
+import ProductDetails, {
+   loader as detailsPageLoader,
+} from './components/productDetails/ProductDetails'
 import WishList from './pages/wishList/WishList'
 import AccountLayout from './pages/account/AccountLayout'
 import LogIn from './pages/account/LogIn'
@@ -29,19 +31,18 @@ function App() {
       createRoutesFromElements(
          <>
             <Route path='/' element={<MainLayout />}>
-               <Route
-                  index
-                  element={<Home />}
-                  loader={homePageLoader}
-                  errorElement={<Error />}
-               />
+               <Route index element={<Home />} loader={homePageLoader} />
                <Route path='shop' element={<Shop />} loader={shopPageLoader} />
                <Route path='blog' element={<Blog />} />
                <Route path='about' element={<About />} />
                <Route path='contact' element={<Contact />} />
                <Route path='cart' element={<Cart />} />
                <Route path='wishlist' element={<WishList />} />
-               <Route path=':id' element={<ProductDetails />} />
+               <Route
+                  path=':id'
+                  element={<ProductDetails />}
+                  loader={detailsPageLoader}
+               />
             </Route>
             <Route path='/account' element={<AccountLayout />}>
                <Route index element={<SignUp />} />

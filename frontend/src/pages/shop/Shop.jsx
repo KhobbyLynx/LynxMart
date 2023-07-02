@@ -18,11 +18,11 @@ const Shop = () => {
 
    const filteredProducts = searchFilter
       ? products.filter((item) =>
-           item.name.toLowerCase().includes(searchFilter.toLowerCase())
+           item.name.trim().toLowerCase().includes(searchFilter.toLowerCase())
         )
       : catFilter
       ? products.filter((item) =>
-           item.category.toLowerCase().includes(catFilter.toLowerCase())
+           item.category.trim().toLowerCase().includes(catFilter.toLowerCase())
         )
       : products
 
@@ -120,7 +120,7 @@ const Shop = () => {
                            </span>
                         )}
                      </h6>
-                     <div className='products__grid'>{ProductsGridOne}</div>
+                     <div className='product-grid'>{ProductsGridOne}</div>
                   </main>
                </section>
             </>

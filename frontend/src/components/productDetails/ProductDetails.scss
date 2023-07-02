@@ -6,6 +6,9 @@
         @media screen and (max-width: '677px') {
             padding:  10px 20px;
         }
+        @media screen and (max-width: '387px') {
+            padding:  10px;
+        }
         .product__detail {
             display: flex;
             @media screen and (max-width: '677px') {
@@ -98,22 +101,9 @@
                 color: var(--cl-gray-700);
                 margin: 15px  0 20px 0;
             }
-            .pro__container {
-                display: grid;
-                align-items: center;
-                justify-content: center;
-                grid-template-columns: repeat( auto-fit , minmax(180px, 1fr));
-                gap: 20px;
-                
-                @media screen and (max-width: '1120px') {
-                    grid-template-columns: repeat( auto-fit , minmax(150px, 1fr));      
-                    gap: 10px;
-                }
+            .product-grid {
                 @media screen and (max-width: '500px') {
-                    grid-template-columns: repeat( auto-fit , minmax(120px, 1fr));      
-                }
-                @media screen and (max-width: '377px') {
-                    grid-template-columns: repeat( auto-fit , minmax(100px, 1fr));
+                    padding: 0px;
                 }
             }
         }

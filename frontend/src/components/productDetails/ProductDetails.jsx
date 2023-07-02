@@ -1,41 +1,19 @@
-import { useState, useEffect } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import React from 'react'
+import { Link, useLoaderData, useParams } from 'react-router-dom'
 import './ProductDetails.scss'
 import ProductCard from '../products/ProductCard'
-import newRequest from '../../utils/newRequest'
 import { useDispatch, useSelector } from 'react-redux'
 import { cartActions } from '../../store/slices/cartSlice'
+import { getProducts } from '../../utils/api'
+
+export function loader() {
+   return getProducts()
+}
 
 const ProductDetails = () => {
-   const [products, setProducts] = useState([])
-   const [product, setProduct] = useState(null)
    const params = useParams()
-
-   useEffect(() => {
-      const fetchData = async () => {
-         try {
-            const response = await newRequest.get(`/products/${params.id}`)
-            setProduct(response.data)
-         } catch (error) {
-            console.log('Error fetching product', error)
-         }
-      }
-
-      fetchData()
-   }, [params.id])
-
-   useEffect(() => {
-      const fetchData = async () => {
-         try {
-            const response = await newRequest.get('/products')
-            setProducts(response.data)
-         } catch (error) {
-            console.log('Error fetching products', error)
-         }
-      }
-
-      fetchData()
-   }, [])
+   const products = useLoaderData()
+   const product = products.find((product) => product._id === params.id)
 
    const dispatch = useDispatch()
    const addToCart = () => {
@@ -60,16 +38,9 @@ const ProductDetails = () => {
       )
    }
 
-   const spinner = {
-      height: '80vh',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-   }
-
    return (
       <>
-         {product ? (
+         {product && (
             <div className='single__product'>
                <div className='product__detail'>
                   <div className='product__image'>
@@ -131,18 +102,13 @@ const ProductDetails = () => {
                <section className='featured__products'>
                   <h2>Featured Products</h2>
                   <p>Summer Collection New Morden Design</p>
-                  <div className='pro__container'>
+                  <div className='product-grid'>
                      {products.slice(0, 4).map((product) => {
                         return (
                            <div key={product._id}>
                               <Link
                                  to={`/${product._id}`}
-                                 className='product_link link'
-                                 onClick={window.scrollTo({
-                                    top: 0,
-                                    left: 0,
-                                    behavior: 'smooth',
-                                 })}
+                                 className='product_link link product-card'
                               >
                                  <ProductCard {...product} />
                               </Link>
@@ -151,10 +117,6 @@ const ProductDetails = () => {
                      })}
                   </div>
                </section>
-            </div>
-         ) : (
-            <div style={spinner}>
-               <span className='loader'>Loading...</span>
             </div>
          )}
       </>

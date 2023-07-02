@@ -1,5 +1,10 @@
 import React from 'react'
-import { Link, useLoaderData } from 'react-router-dom'
+import {
+   Link,
+   useLoaderData,
+   useNavigate,
+   useSearchParams,
+} from 'react-router-dom'
 import { getProducts } from '../../utils/api'
 import Hero from '../hero/Hero'
 import './Home.scss'
@@ -16,6 +21,8 @@ const Home = () => {
    const products = useLoaderData()
    const productsSetOne = products.slice(0, 8)
    const productsSetTwo = products.slice(8, 16)
+   const [searchParams, setSearchParams] = useSearchParams()
+   const navigate = useNavigate()
 
    const ProductsGridOne = productsSetOne.map((product) => {
       return (
@@ -37,6 +44,17 @@ const Home = () => {
       )
    })
 
+   const handleFilterChange = (key, value) => {
+      if (searchParams === '') {
+         if (searchParams.has(key)) {
+            searchParams.delete(key)
+            setSearchParams(searchParams)
+         }
+      } else {
+         navigate(`/shop?${key}=${value}`)
+      }
+   }
+
    return (
       <div className='home'>
          <Hero />
@@ -47,21 +65,25 @@ const Home = () => {
                <h1>Latest Trends and Styles | Fashion</h1>
                <p>Summer Collections - New Modern Design</p>
             </div>
-            <div className='products__grid'>{ProductsGridOne}</div>
+            <div className='product-grid'>{ProductsGridOne}</div>
          </section>
          <section className='banner__explore'>
             <h4>Evolution Of Fashion</h4>
             <p>
                Up to <span>70% off</span> ‒ All t-Shirts & Accessories
             </p>
-            <button>Explore More</button>
+            <button
+               onClick={() => handleFilterChange('q', 't-Shirt&accessories')}
+            >
+               Explore More
+            </button>
          </section>
          <section className='products__section'>
             <div className='products__heading'>
                <h1>Best Sellers | Collections</h1>
                <p>There’s Something Here for Everyone - No Matter Your Style</p>
             </div>
-            <div className='products__grid'>{ProductsGridTwo}</div>
+            <div className='product-grid'>{ProductsGridTwo}</div>
          </section>
          <Brands />
          <section className='big__banner'>
