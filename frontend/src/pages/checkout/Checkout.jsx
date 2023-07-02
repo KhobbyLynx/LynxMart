@@ -54,6 +54,10 @@ const Checkout = () => {
       color: '#000',
       backgroundColor: '#C2C2C2',
    }
+
+   const handleClick = (e) => {
+      e.preventDefault()
+   }
    return (
       <div className='checkout__cover'>
          <div className='checkout__head'>
@@ -73,6 +77,7 @@ const Checkout = () => {
                      to='.'
                      end
                      className='checkout__link'
+                     onClick={handleClick}
                   >
                      Address
                   </NavLink>
@@ -80,6 +85,7 @@ const Checkout = () => {
                      style={({ isActive }) => (isActive ? activeStyles : null)}
                      to='delivery'
                      className='checkout__link'
+                     onClick={handleClick}
                   >
                      Delivery
                   </NavLink>
@@ -87,6 +93,7 @@ const Checkout = () => {
                      style={({ isActive }) => (isActive ? activeStyles : null)}
                      to='payment'
                      className='checkout__link'
+                     onClick={handleClick}
                   >
                      Payment
                   </NavLink>

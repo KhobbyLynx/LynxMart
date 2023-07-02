@@ -48,6 +48,7 @@ const LogIn = () => {
 
       setTimeout(() => {
          let loginSuccessful = true
+         const userFromCart = JSON.parse(localStorage.getItem('fromCart'))
 
          const request = async () => {
             try {
@@ -62,12 +63,19 @@ const LogIn = () => {
 
                if (error.response.data.includes('Invalid user credentials')) {
                   setErrorMsg('Invalid user credentials')
-               } else { setErrorMsg('Incorrect username or password')} 
+               } else {
+                  setErrorMsg('Incorrect username or password')
+               }
 
                return
             } finally {
                if (loginSuccessful) {
-                  navigate('/')
+                  if (userFromCart) {
+                     navigate('/cart/checkout')
+                     localStorage.removeItem('fromCart')
+                  } else {
+                     navigate('/')
+                  }
                   setTimeout(() => {
                      setIsPending(false)
                   }, 3000)
@@ -77,6 +85,7 @@ const LogIn = () => {
          return request()
       }, 2000)
    }
+
    return (
       <>
          {isPending ? (
