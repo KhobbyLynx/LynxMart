@@ -62,7 +62,7 @@ const LogIn = () => {
 
                if (error.response.data.includes('Invalid user credentials')) {
                   setErrorMsg('Invalid user credentials')
-               }
+               } else { setErrorMsg('Incorrect username or password')} 
 
                return
             } finally {
