@@ -7,7 +7,7 @@ import { images } from '../../constants'
 import HashLoader from 'react-spinners/HashLoader'
 
 const Checkout = () => {
-  const [isPending, setIsPending] = useState(true)
+  const [isPending, setIsPending] = useState(false)
   const cartItems = useSelector((state) => state.cart.itemsList)
   const shippingFee = useSelector((state) => state.cart.shippingFee)
   const totalAmount = useSelector((state) => state.cart.totalAmount)
