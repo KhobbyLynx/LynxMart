@@ -1,32 +1,33 @@
-.account{
+.account {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     min-height: 100vh;
-    h2{
+    h2 {
         color: var(--cl-orange-600);
         font-size: 23px;
-        @media screen and (max-width: '620px') {
+        @media screen and (max-width: "620px") {
             font-size: 18px;
         }
     }
-    p{
+    p {
         color: var(--cl-gray-600);
         font-size: 13px;
         text-align: center;
     }
-    img{
+    img {
         width: 60px;
         margin: 20px;
-        @media screen and (max-width: '620px') {
-           width: 50px;
+        @media screen and (max-width: "620px") {
+            width: 50px;
         }
     }
-    .account__form{
+    .account__form {
+        display: flex;
         flex: 1;
     }
-    .account__footer{
+    .account__footer {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -36,19 +37,19 @@
         padding: 8px;
     }
 }
-.sign__up{
+.sign__up {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    p{
-        @media screen and (max-width: '357px') {
+    p {
+        @media screen and (max-width: "357px") {
             font-size: 12px;
-         }
+        }
     }
 }
 
-fieldset{
+fieldset {
     padding: 20px 0;
     margin-bottom: 20px;
     text-align: center;
@@ -60,40 +61,42 @@ fieldset{
     min-width: 500px;
     border: 1px solid var(--secondary-color);
     border-radius: 5px;
-    @media screen and (max-width: '620px') {
+    @media screen and (max-width: "620px") {
         min-width: 200px;
         width: 400px;
-     }
-     @media screen and (max-width: '477px') {
+    }
+    @media screen and (max-width: "477px") {
         min-width: 150px;
         width: 350px;
-     }
-     @media screen and (max-width: '357px') {
+    }
+    @media screen and (max-width: "357px") {
         min-width: 100px;
         width: 280px;
-     }
-    h6{
+    }
+    h6 {
         color: var(--cl-black);
     }
 
-    legend{
+    legend {
         padding: 20px;
         font-size: 18px;
         color: var(--cl-gray-600);
     }
 
-    input, button, select{
+    input,
+    button,
+    select {
         width: 80%;
         padding: 8px;
         margin-bottom: 20px;
         outline: none;
         border: 1px solid var(--cl-gray-400);
-        &::placeholder{
+        &::placeholder {
             font-size: 14px;
         }
     }
 
-    button{
+    button {
         background-color: var(--cl-orange-400);
         border: 1px solid var(--cl-orange-400);
         color: var(--cl-gray-100);
@@ -102,54 +105,54 @@ fieldset{
         font-size: 12px;
         font-weight: 500;
     }
-    p{
+    p {
         width: 80%;
     }
 }
 
-.other__link{
+.other__link {
     min-width: 300px;
     width: 500px;
-    @media screen and (max-width: '620px') {
+    @media screen and (max-width: "620px") {
         min-width: 200px;
         width: 400px;
-     }
-     @media screen and (max-width: '477px') {
+    }
+    @media screen and (max-width: "477px") {
         min-width: 150px;
         width: 350px;
-     }
-     @media screen and (max-width: '357px') {
+    }
+    @media screen and (max-width: "357px") {
         min-width: 100px;
         width: 280px;
-     }
-    .link__header{
+    }
+    .link__header {
         display: flex;
         justify-content: space-between;
         padding: 30px 0 20px;
-        span{
+        span {
             font-size: 16px;
             color: var(--cl-gray-600);
             display: flex;
             align-items: center;
             justify-content: center;
             white-space: nowrap;
-            @media screen and (max-width: '477px') {
-               font-size: 13px;
-             }
+            @media screen and (max-width: "477px") {
+                font-size: 13px;
+            }
         }
-        hr{
+        hr {
             width: 30%;
             height: 0px;
             border: none;
             border-bottom: 1px solid var(--secondary-color);
             margin-top: auto;
             margin-bottom: auto;
-            @media screen and (max-width: '677px') {
+            @media screen and (max-width: "677px") {
                 width: 20%;
-              }
+            }
         }
     }
-    button{
+    button {
         width: 100%;
         padding: 10px;
         margin-bottom: 20px;
@@ -158,11 +161,11 @@ fieldset{
         border: 1px solid var(--secondary-color);
         color: var(--cl-gray-100);
         border-radius: 5px;
-        &::placeholder{
+        &::placeholder {
             font-size: 14px;
         }
     }
-    p{
+    p {
         width: 80%;
         margin: auto;
         padding-bottom: 20px;

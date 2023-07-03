@@ -83,7 +83,7 @@ const ProductCard = ({
                   () =>
                      setTimeout(() => {
                         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
-                     }, 600) // Delay of 1000 milliseconds (1 second)
+                     }, 800) 
                }
             >
                <div className='image__container'>
