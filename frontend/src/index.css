@@ -12,11 +12,6 @@
   cursor: pointer;
 }
 
-.df {
-  display: flex;
-  align-items: center;
-}
-
 .icon__link {
   color: #000;
   font-size: 22px;

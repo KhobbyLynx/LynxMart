@@ -19,18 +19,52 @@
   }
 }
 
-.no-product-found {
+.df {
   display: flex;
-  flex-direction: column;
+}
+.dfac {
+  display: flex;
+  align-items: center;
+}
+.dfacjc {
+  display: flex;
   align-items: center;
   justify-content: center;
+}
+.jc {
+  justify-content: center;
+}
+.jfs {
+  justify-content: flex-start;
+}
+.jsb {
+  justify-content: space-between;
+}
+.fdc {
+  flex-direction: column;
+}
+.mt50 {
+  margin-top: 50px;
+}
+.bb {
+  border-bottom: 1px solid var(--cl-gray-300);
+}
+.navlist {
+  &:nth-child(8) {
+    border-bottom: 1px solid var(--cl-gray-300);
+  }
+}
+.pr {
+  position: relative;
+}
+
+.no-product-found {
   text-align: center;
   width: 100%;
   min-height: 350px;
   height: 500px;
 
   &__icon-container {
-    display: flex;
     padding: 20px;
     background-color: var(--cl-gray-300);
     border-radius: 20px;
@@ -47,10 +81,6 @@
   }
 
   &__message {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     font-size: 16px;
     line-height: 1.5;
     margin-bottom: 28px;
@@ -72,8 +102,6 @@
 }
 
 .request-loader {
-  display: flex;
-  align-items: center;
   padding-bottom: 100px;
   position: fixed;
   z-index: 999;
@@ -105,6 +133,97 @@
   font-size: 13px;
   font-weight: 600;
   color: var(--cl-red-400);
+}
+
+.inactive-scroll {
+  position: fixed;
+  width: 100%;
+}
+
+.toggle-menu-icon {
+  font-size: 38px;
+  color: var(--cl-black);
+  margin-right: 10px;
+}
+
+.animate-menu-in {
+  transform: translateX(0);
+  transition: var(--speed) ease;
+}
+
+.animate-menu-out {
+  transform: translateX(-100vh);
+  transition: var(--speed) ease;
+}
+
+.hamburger-menu {
+  width: 80vw;
+  z-index: 999;
+  position: fixed;
+  overflow-y: scroll;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  background-color: var(--cl-gray-100);
+
+  @media screen and (min-width: "999px") {
+    display: none;
+  }
+
+  @media screen and (max-width: "999px") {
+    padding: 10px 40px;
+    padding-bottom: 16px;
+  }
+
+  @media screen and (max-width: "699px") {
+    padding: 10px 20px;
+  }
+  @media screen and (max-width: "387px") {
+    padding: 10px;
+  }
+
+  &__menu-icon {
+    max-width: 30px;
+    max-height: 30px;
+  }
+  &__logo-container {
+    span {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-left: 10px;
+    }
+  }
+  &__tab {
+    border-top: 1px solid var(--cl-gray-300);
+    padding: 15px 0;
+    gap: 30px;
+    span {
+      font-size: 15px;
+      text-transform: capitalize;
+    }
+  }
+  &__head-tab {
+    padding: 20px 0;
+    h3 {
+      font-size: 14px;
+      font-family: "League Spartan", sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--cl-orange-400);
+    }
+  }
+}
+
+.logo {
+  width: 38px;
+  height: auto;
+}
+
+.menu-icon {
+  max-width: 25px;
+  max-height: 25px;
+  transition: var(--speed);
 }
 
 .menu {
@@ -143,9 +262,6 @@
     transition: var(--speed) ease;
   }
   h3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 100%;
     font-size: 18px;
     padding: 20px 0;
@@ -165,9 +281,6 @@
       padding: 12px 0;
       border-top: 1px solid rgba(0, 0, 0, 0.05);
       list-style: none;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
       cursor: pointer;
       img {
         max-width: 25px;

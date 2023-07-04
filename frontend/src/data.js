@@ -309,27 +309,27 @@ export const dropdown = [
 export const mobileMenu = [
   {
     id: 1,
-    name: 'home',
+    text: 'home',
     icon: 'https://res.cloudinary.com/khobbylynx/image/upload/v1688346000/lynxmart/img/icons/home-page_isvowt.png',
   },
   {
     id: 2,
-    name: 'shop',
+    text: 'shop',
     icon: 'https://res.cloudinary.com/khobbylynx/image/upload/v1688346000/lynxmart/img/icons/online-shop_xykyon.png',
   },
   {
     id: 3,
-    name: 'blog',
+    text: 'blog',
     icon: 'https://res.cloudinary.com/khobbylynx/image/upload/v1688346000/lynxmart/img/icons/blog_stya7d.png',
   },
   {
     id: 4,
-    name: 'about',
+    text: 'about',
     icon: 'https://res.cloudinary.com/khobbylynx/image/upload/v1688346000/lynxmart/img/icons/about-page_bf2jim.png',
   },
   {
     id: 5,
-    name: 'contact',
+    text: 'contact',
     icon: 'https://res.cloudinary.com/khobbylynx/image/upload/v1688346000/lynxmart/img/icons/contact-page_cffcsq.png',
   },
 ]
@@ -337,37 +337,37 @@ export const mobileMenu = [
 export const mobileMenuCategory = [
   {
     id: 1,
-    name: 'clothing',
+    text: 'clothing',
     icon: 'https://res.cloudinary.com/khobbylynx/image/upload/v1688345491/lynxmart/img/icons/fashion_fthyls.png',
   },
   {
     id: 2,
-    name: 'phones',
+    text: 'phones',
     icon: 'https://res.cloudinary.com/khobbylynx/image/upload/v1688345490/lynxmart/img/icons/phone_m7x4py.png',
   },
   {
     id: 3,
-    name: 'computing',
+    text: 'computing',
     icon: 'https://res.cloudinary.com/khobbylynx/image/upload/v1688345491/lynxmart/img/icons/computing_dzulzf.png',
   },
   {
     id: 4,
-    name: 'health & beauty',
+    text: 'health & beauty',
     icon: 'https://res.cloudinary.com/khobbylynx/image/upload/v1688345491/lynxmart/img/icons/beauty_ejep6r.png',
   },
   {
     id: 5,
-    name: 'electronics',
+    text: 'electronics',
     icon: 'https://res.cloudinary.com/khobbylynx/image/upload/v1688345491/lynxmart/img/icons/electronics_shervg.png',
   },
   {
     id: 6,
-    name: 'sports',
+    text: 'sports',
     icon: 'https://res.cloudinary.com/khobbylynx/image/upload/v1688345490/lynxmart/img/icons/sports_rmbih5.png',
   },
   {
     id: 7,
-    name: 'Home & office',
+    text: 'Home & office',
     icon: 'https://res.cloudinary.com/khobbylynx/image/upload/v1688345491/lynxmart/img/icons/office_ghqzbu.png',
   },
 ]

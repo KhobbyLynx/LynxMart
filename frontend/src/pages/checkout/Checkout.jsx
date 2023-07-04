@@ -64,7 +64,7 @@ const Checkout = () => {
     <>
       {isPending && (
         <>
-          <div className='request-loader main-layout__loader'>
+          <div className='request-loader dfac main-layout__loader'>
             <HashLoader color='#D65E05' loading size={60} />
           </div>
           <div className='overlay'></div>
@@ -138,7 +138,7 @@ const Checkout = () => {
                 </div>
                 <div className='order__total'>
                   <h3>Total</h3>
-                  <h6 className='df'>
+                  <h6 className='dfac'>
                     <span>USD</span>${overallTotalFormatted}
                   </h6>
                 </div>

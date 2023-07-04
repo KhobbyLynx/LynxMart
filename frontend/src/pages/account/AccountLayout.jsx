@@ -21,7 +21,7 @@ const AccountLayout = () => {
       </div>
       {isPending && (
         <>
-          <div className='request-loader'>
+          <div className='request-loader dfac'>
             <HashLoader color='#D65E05' loading size={60} />
           </div>
           <div className='overlay'></div>
