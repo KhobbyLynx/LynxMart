@@ -300,7 +300,7 @@ export const dropdown = [
     icon: 'https://res.cloudinary.com/khobbylynx/image/upload/v1688345490/lynxmart/img/icons/saved_bcvkc8.png',
   },
   {
-    id: 5,
+    id: 6,
     name: 'recently viewed',
     icon: 'https://res.cloudinary.com/khobbylynx/image/upload/v1688345490/lynxmart/img/icons/recent_deyjjr.png',
   },

@@ -16,7 +16,9 @@ const ProductDetails = () => {
   const products = useLoaderData()
   const product = products.find((product) => product._id === params.id)
   const [selectedImage, setSelectedImage] = useState(product.images[0])
-  const [showQuantity, SetShowQuantity] = useState(false)
+  // const [showQuantity, SetShowQuantity] = useState(false)
+  const cartItems = useSelector((state) => state.cart.itemsList)
+  const existingItem = cartItems.find((item) => item.id === params.id)
 
   const handleImageClick = (image) => {
     setSelectedImage(image)
@@ -25,10 +27,8 @@ const ProductDetails = () => {
   const dispatch = useDispatch()
 
   const updateCartItems = () => {
-    SetShowQuantity(!showQuantity)
-
     dispatch(
-      cartActions.addOrRemoveFromCart({
+      cartActions.updateCartItems({
         id: product._id,
         name: product.name,
         price: product.price,
@@ -36,8 +36,8 @@ const ProductDetails = () => {
       })
     )
 
-    const toastType = showQuantity ? 'error' : 'success'
-    const msg = showQuantity ? 'Item removed from cart' : 'Item added to cart'
+    const toastType = existingItem ? 'error' : 'success'
+    const msg = existingItem ? 'Item removed from cart' : 'Item added to cart'
 
     toast[toastType](msg, {
       position: 'top-right',
@@ -122,7 +122,7 @@ const ProductDetails = () => {
                   <option>Large</option>
                 </select>
               )}
-              {showQuantity && (
+              {existingItem && (
                 <input
                   type='number'
                   min='1'

@@ -31,6 +31,29 @@ const ProductCard = ({
     setTimeout(() => {
       window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
     }, 800)
+
+    let recentlyViewed =
+      JSON.parse(localStorage.getItem('recentlyViewed')) || []
+    const productExists = recentlyViewed.some((product) => product.id === _id)
+
+    if (!productExists) {
+      recentlyViewed.push({
+        id: _id,
+        name,
+        brandName,
+        price,
+        rating,
+        reviewCount,
+        images,
+      })
+
+      if (recentlyViewed.length > 8) {
+        recentlyViewed.shift() // Remove the oldest product (first element)
+      }
+
+      localStorage.setItem('recentlyViewed', JSON.stringify(recentlyViewed))
+    }
+
     setSelectedImage(images[0])
   }
 
@@ -38,7 +61,7 @@ const ProductCard = ({
     e.preventDefault()
 
     dispatch(
-      cartActions.addOrRemoveFromCart({
+      cartActions.updateCartItems({
         id: _id,
         name,
         price,
