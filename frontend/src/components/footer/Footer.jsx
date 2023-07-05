@@ -6,22 +6,38 @@ import { Link } from 'react-router-dom'
 import CopyRight from '../copyRight/CopyRight'
 
 const Footer = () => {
+  const linkToRouteMap = {
+    'About Us': '/about',
+    'Delivery Information': '',
+    'Privacy Policy': '',
+    'Terms & Conditions': '',
+    'Contact Us': '/contact',
+    'Sign In': '/account',
+    'View Cart': '/cart',
+    'My Wishlist': '',
+    'Track My Order': '',
+    Help: '',
+  }
+
   return (
     <div className='footer'>
       <div className='footer__logo'>
-        <img src={images.logo} alt='lynx logo' />
+        <Link
+          to='/'
+          onClick={() =>
+            window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+          }
+        >
+          <img src={images.logo} alt='lynx logo' />
+        </Link>
       </div>
       <div className='footer__content'>
         <div className='footer__contact'>
           <div className='contact__section'>
             <h2>Contact</h2>
             <div className='contact__info'>
-              <span className='span'>
-                Address: 562 Wellington Street 32, San Francisco
-              </span>
-              <span className='span'>
-                Phone: +01 2222 365 / (+91) 012345 6789
-              </span>
+              <span className='span'>Address: 562 Oxford Street, Osu</span>
+              <span className='span'>Phone: +01 2222 365</span>
               <span className='span'>Hours: 10:00 - 18:00, Mon - Sat</span>
             </div>
           </div>
@@ -45,7 +61,14 @@ const Footer = () => {
               'Terms & Conditions',
               'Contact Us',
             ].map((link) => (
-              <Link className='link span' key={link}>
+              <Link
+                className='link span'
+                key={link}
+                to={linkToRouteMap[link]}
+                onClick={() =>
+                  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+                }
+              >
                 {link}
               </Link>
             ))}
@@ -59,7 +82,14 @@ const Footer = () => {
               'Track My Order',
               'Help',
             ].map((link) => (
-              <Link className='link span' key={link}>
+              <Link
+                className='link span'
+                key={link}
+                to={linkToRouteMap[link]}
+                onClick={() =>
+                  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+                }
+              >
                 {link}
               </Link>
             ))}

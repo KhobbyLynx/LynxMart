@@ -5,6 +5,7 @@ import { MdOutlineSearchOff } from 'react-icons/md'
 import { Link, useSearchParams } from 'react-router-dom'
 import './Shop.scss'
 import ProductCard from '../../components/products/ProductCard'
+import { all } from 'axios'
 
 export function loader() {
   return getProducts()
@@ -15,6 +16,7 @@ const Shop = () => {
   const products = useLoaderData()
   const searchFilter = searchParams.get('q')
   const catFilter = searchParams.get('cat')
+  const brandFilter = searchParams.get('brand')
 
   const filteredProducts = searchFilter
     ? products.filter((item) =>
@@ -23,6 +25,10 @@ const Shop = () => {
     : catFilter
     ? products.filter((item) =>
         item.category.trim().toLowerCase().includes(catFilter.toLowerCase())
+      )
+    : brandFilter
+    ? products.filter((item) =>
+        item.brandName.trim().toLowerCase().includes(brandFilter.toLowerCase())
       )
     : products
 
@@ -50,9 +56,11 @@ const Shop = () => {
             <MdOutlineSearchOff className='no-product-found__icon' size={64} />
           </div>
           <h6 className='no-product-found__title'>
-            There are no results for "{searchFilter || catFilter}"
+            There are no results for "{searchFilter || catFilter || brandFilter}
+            "
           </h6>
           <div className='no-product-found__message dfacjc fdc'>
+            <p>- Item may be out of stock</p>
             <p>- Check your spelling for typing errors</p>
             <p>- Try searching with short and simple keywords</p>
             <p>

@@ -1,9 +1,9 @@
 import './App.scss'
 import {
-   Route,
-   createBrowserRouter,
-   createRoutesFromElements,
-   RouterProvider,
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
 } from 'react-router-dom'
 import MainLayout from './components/layouts/MainLayout'
 import Home, { loader as homePageLoader } from './pages/home/Home'
@@ -13,7 +13,7 @@ import About from './pages/about/About'
 import Contact from './pages/contact/Contact'
 import Cart from './pages/cart/Cart'
 import ProductDetails, {
-   loader as detailsPageLoader,
+  loader as detailsPageLoader,
 } from './components/productDetails/ProductDetails'
 import WishList from './pages/wishList/WishList'
 import AccountLayout from './pages/account/AccountLayout'
@@ -27,37 +27,37 @@ import Payment from './components/payment/Payment'
 import Error from './components/error/Error'
 
 function App() {
-   const router = createBrowserRouter(
-      createRoutesFromElements(
-         <>
-            <Route path='/' element={<MainLayout />}>
-               <Route index element={<Home />} loader={homePageLoader} />
-               <Route path='shop' element={<Shop />} loader={shopPageLoader} />
-               <Route path='blog' element={<Blog />} />
-               <Route path='about' element={<About />} />
-               <Route path='contact' element={<Contact />} />
-               <Route path='cart' element={<Cart />} />
-               <Route path='wishlist' element={<WishList />} />
-               <Route
-                  path=':id'
-                  element={<ProductDetails />}
-                  loader={detailsPageLoader}
-               />
-            </Route>
-            <Route path='/account' element={<AccountLayout />}>
-               <Route index element={<SignUp />} />
-               <Route path='login' element={<LogIn />} />
-               <Route path='forgotpassword' element={<ForgotPassword />} />
-            </Route>
-            <Route path='cart/checkout' element={<Checkout />}>
-               <Route index element={<CheckoutForm />} />
-               <Route path='delivery' element={<Delivery />} />
-               <Route path='payment' element={<Payment />} />
-            </Route>
-         </>
-      )
-   )
-   return <RouterProvider router={router} />
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <>
+        <Route path='/' element={<MainLayout />} errorElement={<Error />}>
+          <Route index element={<Home />} loader={homePageLoader} />
+          <Route path='shop' element={<Shop />} loader={shopPageLoader} />
+          <Route path='blog' element={<Blog />} />
+          <Route path='about' element={<About />} />
+          <Route path='contact' element={<Contact />} />
+          <Route path='cart' element={<Cart />} />
+          <Route path='wishlist' element={<WishList />} />
+          <Route
+            path=':id'
+            element={<ProductDetails />}
+            loader={detailsPageLoader}
+          />
+        </Route>
+        <Route path='/account' element={<AccountLayout />}>
+          <Route index element={<SignUp />} />
+          <Route path='login' element={<LogIn />} />
+          <Route path='forgotpassword' element={<ForgotPassword />} />
+        </Route>
+        <Route path='cart/checkout' element={<Checkout />}>
+          <Route index element={<CheckoutForm />} />
+          <Route path='delivery' element={<Delivery />} />
+          <Route path='payment' element={<Payment />} />
+        </Route>
+      </>
+    )
+  )
+  return <RouterProvider router={router} />
 }
 
 export default App
