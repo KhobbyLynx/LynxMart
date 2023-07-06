@@ -5,7 +5,6 @@ import { MdOutlineSearchOff } from 'react-icons/md'
 import { Link, useSearchParams } from 'react-router-dom'
 import './Shop.scss'
 import ProductCard from '../../components/products/ProductCard'
-import { all } from 'axios'
 
 export function loader() {
   return getProducts()
@@ -115,11 +114,15 @@ const Shop = () => {
                 ) : (
                   'Shop'
                 )}{' '}
-                {searchFilter && (
+                {searchFilter || catFilter || brandFilter ? (
                   <span>
-                    &gt; {searchFilter[0].toUpperCase() + searchFilter.slice(1)}
+                    &gt;{' '}
+                    {(searchFilter || catFilter || brandFilter)
+                      .charAt(0)
+                      .toUpperCase() +
+                      (searchFilter || catFilter || brandFilter).slice(1)}
                   </span>
-                )}
+                ) : null}
               </h6>
               <div className='product-grid'>{ProductsGridOne}</div>
             </main>
