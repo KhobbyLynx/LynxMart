@@ -82,18 +82,22 @@ const SignUp = () => {
             email: email,
             password: confirmedPassword,
           })
+
+          // when error with statusCode 500 occurs, currentUser is set to a message, hence the need if removeItem if it exist
+          localStorage.removeItem('currentUser')
           localStorage.setItem('currentUser', JSON.stringify(res.data))
         } catch (error) {
           setIsPending(false)
           signupSuccessful = false
+          setError(true)
 
-          if (error.response.data.includes('User already exists')) {
-            setError(true)
-            setErrorMsg('User already exists')
-          } else if (error.response.data.includes('Please add all fields')) {
-            setError(true)
-            setErrorMsg('Please add all fields')
-          }
+          const statusCode = error.response.status
+          if (statusCode === 400) {
+            setErrorMsg(error.response.data.message)
+          } else if (statusCode === 500) {
+            setErrorMsg(error.response.statusText)
+          } else setErrorMsg('something went wrong')
+
           return
         } finally {
           if (signupSuccessful) {

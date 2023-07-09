@@ -17,10 +17,15 @@ const CartCard = ({ id, image, name, price }) => {
 
   const quantity = useSelector((state) => {
     const item = state.cart.itemsList.find((item) => item.id === id)
-    return item ? item.quantity : 0
+    return item && item.quantity
   })
 
   const subTotalFormatted = (quantity * price).toLocaleString(undefined, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })
+
+  const formattedPrice = price.toLocaleString(undefined, {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   })
@@ -35,7 +40,7 @@ const CartCard = ({ id, image, name, price }) => {
           <img src={image} alt={name} />
         </td>
         <td>{name}</td>
-        <td>${price}</td>
+        <td>${formattedPrice}</td>
         <td>
           <input
             type='number'

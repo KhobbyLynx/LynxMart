@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
 import { cartActions } from '../../store/slices/cartSlice'
 import { getProducts } from '../../utils/api'
+import FeaturedProducts from '../featuredProducts/FeaturedProducts'
 
 export function loader() {
   return getProducts()
@@ -16,7 +17,6 @@ const ProductDetails = () => {
   const products = useLoaderData()
   const product = products.find((product) => product._id === params.id)
   const [selectedImage, setSelectedImage] = useState(product.images[0])
-  // const [showQuantity, SetShowQuantity] = useState(false)
   const cartItems = useSelector((state) => state.cart.itemsList)
   const existingItem = cartItems.find((item) => item.id === params.id)
 
@@ -50,10 +50,6 @@ const ProductDetails = () => {
       theme: 'light',
     })
   }
-  const quantity = useSelector((state) => {
-    const item = state.cart.itemsList.find((item) => item.id === params.id)
-    return item ? item.quantity : 1
-  })
 
   const handleQuantityChange = (e) => {
     const newQuantity = parseInt(e.target.value, 10)
@@ -62,12 +58,22 @@ const ProductDetails = () => {
     )
   }
 
+  const quantity = useSelector((state) => {
+    const item = state.cart.itemsList.find((item) => item.id === params.id)
+    return item ? item.quantity : 1
+  })
+
   let shortenedName = product.name
   const maxLength = 20
 
   if (shortenedName.length > maxLength) {
     shortenedName = shortenedName.substring(0, maxLength - 3) + '...'
   }
+
+  const formattedPrice = product.price.toLocaleString(undefined, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })
 
   return (
     <>
@@ -112,7 +118,10 @@ const ProductDetails = () => {
                 <span className='pro-name'>{shortenedName}</span>
               </h6>
               <h4>{product.name}</h4>
-              <h2>${product.price}</h2>
+              <h2>
+                GH&#8373;
+                {formattedPrice}
+              </h2>
               {product.category.toLowerCase() === 'clothing' && (
                 <select>
                   <option>Select Size</option>
@@ -138,27 +147,12 @@ const ProductDetails = () => {
               <span>{product.description}</span>
             </div>
           </div>
-          <section className='featured__products'>
-            <h2>Featured Products</h2>
-            <p>Summer Collection New Morden Design</p>
-            <div className='product-grid'>
-              {products.slice(0, 4).map((product) => {
-                return (
-                  <div key={product._id}>
-                    <Link
-                      to={`/${product._id}`}
-                      className='product_link link product-card'
-                    >
-                      <ProductCard
-                        {...product}
-                        setSelectedImage={setSelectedImage}
-                      />
-                    </Link>
-                  </div>
-                )
-              })}
-            </div>
-          </section>
+          <FeaturedProducts
+            header='Featured Products'
+            desc='Summer Collection New Morden Design'
+            products={products}
+            setSelectedImage={setSelectedImage}
+          />
         </div>
       )}
     </>

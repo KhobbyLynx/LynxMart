@@ -18,7 +18,7 @@ const Navbar = ({ setIsPending, setHamburgerMenu }) => {
 
   useEffect(() => {
     let handler = (e) => {
-      if (!menuRef.current.contains(e.target)) {
+      if (!menuRef.current?.contains(e.target)) {
         setOpen(false)
       }
     }
@@ -42,7 +42,7 @@ const Navbar = ({ setIsPending, setHamburgerMenu }) => {
     setOpen(false)
     try {
       await newRequest.post(`/users/logout`)
-      localStorage.setItem('currentUser', null)
+      localStorage.removeItem('currentUser')
       setIsPending(false)
       navigate('/account/login')
     } catch (error) {
@@ -86,7 +86,7 @@ const Navbar = ({ setIsPending, setHamburgerMenu }) => {
                       onClick={() => setOpen(!open)}
                     >
                       <div className='profile__img dfac'>
-                        {currentUser.name[0]}
+                        {currentUser.name[0].toUpperCase()}
                       </div>
                       <span>{`Hi, ${currentUser.name.split(' ')[0]}`}</span>
                     </button>

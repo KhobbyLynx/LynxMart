@@ -1,17 +1,22 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+const cartItems = JSON.parse(localStorage.getItem('cartItems'))
+const sumTotal = JSON.parse(localStorage.getItem('sumTotal'))
+const overAllTotal = JSON.parse(localStorage.getItem('overAllTotal'))
+
 const cartSlice = createSlice({
   name: 'cart',
   initialState: {
-    itemsList: [],
-    totalQuantity: 0,
-    totalAmount: 0,
+    itemsList: cartItems ? cartItems : [],
+    totalQuantity: cartItems?.length || 0,
+    totalAmount: sumTotal || 0,
     shippingFee: 100,
-    overallTotal: 0,
+    overallTotal: overAllTotal || 0,
   },
   reducers: {
     updateCartItems(state, action) {
       const newItem = action.payload
+
       const existingItem = state.itemsList.find(
         (item) => item.id === newItem.id
       )
@@ -20,6 +25,7 @@ const cartSlice = createSlice({
         state.itemsList = state.itemsList.filter(
           (item) => item.id !== newItem.id
         )
+
         state.totalQuantity--
         existingItem.totalPrice -= existingItem.price
       } else {
@@ -28,13 +34,15 @@ const cartSlice = createSlice({
           quantity: 1,
           totalPrice: newItem.price,
         })
+
         state.totalQuantity++
       }
 
-      if (state.itemsList.length > 20) {
+      if (state.itemsList.length > 30) {
         state.itemsList.shift() // Remove the oldest product (first element)
       }
 
+      console.log(state.itemsList)
       localStorage.setItem('cartItems', JSON.stringify(state.itemsList))
     },
 
@@ -42,12 +50,15 @@ const cartSlice = createSlice({
       const id = action.payload
       state.itemsList = state.itemsList.filter((item) => item.id !== id)
       state.totalQuantity--
+
       // Recalculate totalAmount and overallTotal
       state.totalAmount = calculateTotalAmount(state.itemsList)
       state.overallTotal = state.totalAmount + state.shippingFee
 
+      localStorage.setItem('overAllTotal', JSON.stringify(state.overallTotal))
       localStorage.setItem('cartItems', JSON.stringify(state.itemsList))
     },
+
     updateQuantity(state, action) {
       const { id, quantity } = action.payload
       const item = state.itemsList.find((item) => item.id === id)
@@ -60,6 +71,7 @@ const cartSlice = createSlice({
       state.totalAmount = calculateTotalAmount(state.itemsList)
       state.overallTotal = state.totalAmount + state.shippingFee
 
+      localStorage.setItem('overAllTotal', JSON.stringify(state.overallTotal))
       localStorage.setItem('cartItems', JSON.stringify(state.itemsList))
     },
   },
@@ -71,6 +83,7 @@ const calculateTotalAmount = (itemsList) => {
   itemsList.forEach((item) => {
     totalAmount += item.price * item.quantity
   })
+  localStorage.setItem('sumTotal', JSON.stringify(totalAmount))
   return totalAmount
 }
 

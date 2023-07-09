@@ -1,14 +1,14 @@
-.cart__section{
-    
-    .cart{
-        overflow-x: auto;
+.cart__section {
+    section {
         padding: 60px;
-
-        @media screen and (max-width: '677px') {
+        @media screen and (max-width: "677px") {
             padding: 60px 10px;
         }
-    
-        table  {
+    }
+    .cart {
+        overflow-x: auto;
+
+        table {
             width: 100%;
             border-collapse: collapse;
             table-layout: fixed;
@@ -18,8 +18,8 @@
                 border: 1px solid #e2e9e1;
                 border-left: none;
                 border-right: none;
-                tr{
-                    td  {
+                tr {
+                    td {
                         font-weight: 700;
                         text-transform: uppercase;
                         font-size: 13px;
@@ -27,20 +27,24 @@
                     }
                 }
             }
-}
+        }
     }
-    .cart__add  {
-        padding: 60px;
+
+    .no-cart-items {
+        font-size: 20px;
+        font-weight: 700;
+        text-align: center;
+        color: var(--primary-color);
+    }
+    .cart__add {
         display: flex;
         justify-content: space-between;
 
-        @media screen and (max-width: '999px') {
+        @media screen and (max-width: "999px") {
             flex-direction: column;
         }
-        @media screen and (max-width: '677px') {
-            padding: 60px 10px;
-        }
-        h3{
+
+        h3 {
             padding-bottom: 15px;
         }
         button {
@@ -52,7 +56,7 @@
             border: none;
             outline: none;
             transition: 0.2s;
-            background-color: #D65E05;
+            background-color: #d65e05;
             color: #f2f2f2;
             padding: 12px 20px;
         }
@@ -67,7 +71,7 @@
             width: 50%;
             margin-bottom: 30px;
 
-            @media screen and (max-width: '999px') {
+            @media screen and (max-width: "999px") {
                 width: 100%;
             }
         }
@@ -77,10 +81,10 @@
             border: 1px solid #e2e9e1;
             padding: 30px;
 
-            @media screen and (max-width: '999px') {
+            @media screen and (max-width: "999px") {
                 width: 100%;
             }
-            @media screen and (max-width: '677px') {
+            @media screen and (max-width: "677px") {
                 padding: 10px;
             }
             table {
@@ -94,15 +98,9 @@
                     font-size: 13px;
                 }
             }
-            button{
+            button {
                 margin-top: 6px;
             }
         }
     }
 }
-
-
-
-
-
-

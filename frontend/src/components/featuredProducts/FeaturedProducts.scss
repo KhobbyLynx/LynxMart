@@ -1,0 +1,22 @@
+.featured__products {
+    padding: 50px 0;
+    text-align: center;
+
+    h2 {
+        font-size: 26px;
+        color: var(--cl-gray-800);
+    }
+    p {
+        font-size: 16px;
+        color: var(--cl-gray-700);
+        margin: 10px 0;
+    }
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, 200px);
+
+        @media screen and (max-width: "500px") {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            padding: 0px;
+        }
+    }
+}

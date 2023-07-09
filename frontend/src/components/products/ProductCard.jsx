@@ -34,11 +34,11 @@ const ProductCard = ({
 
     let recentlyViewed =
       JSON.parse(localStorage.getItem('recentlyViewed')) || []
-    const productExists = recentlyViewed.some((product) => product.id === _id)
+    const productExists = recentlyViewed.some((product) => product._id === _id)
 
     if (!productExists) {
       recentlyViewed.push({
-        id: _id,
+        _id,
         name,
         brandName,
         price,
@@ -54,7 +54,7 @@ const ProductCard = ({
       localStorage.setItem('recentlyViewed', JSON.stringify(recentlyViewed))
     }
 
-    setSelectedImage(images[0])
+    setSelectedImage && setSelectedImage(images[0])
   }
 
   const handleCartClick = (e) => {
@@ -106,6 +106,10 @@ const ProductCard = ({
     )
   }
 
+  const formattedPrice = price.toLocaleString(undefined, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })
   return (
     <>
       <div className='product__container'>
@@ -120,7 +124,7 @@ const ProductCard = ({
             <div className='star'>
               {stars} <h6>({reviewCount})</h6>
             </div>
-            <h4>${price}</h4>
+            <h4>GH&#8373;{formattedPrice}</h4>
           </div>
         </div>
         <div
