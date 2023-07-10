@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useLoaderData, useParams } from 'react-router-dom'
 import './ProductDetails.scss'
-import ProductCard from '../products/ProductCard'
 import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
 import { cartActions } from '../../store/slices/cartSlice'

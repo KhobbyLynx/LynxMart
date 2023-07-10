@@ -25,6 +25,9 @@ import CheckoutForm from './components/checkoutForm/CheckoutForm'
 import Delivery from './components/delivery/Delivery'
 import Payment from './components/payment/Payment'
 import Error from './components/error/Error'
+import RecentlyViewedItems from './pages/wishList/RecentlyViewedItems'
+import Inbox from './components/inbox/Inbox'
+import Orders from './components/orders/Orders'
 
 function App() {
   const router = createBrowserRouter(
@@ -38,6 +41,9 @@ function App() {
           <Route path='contact' element={<Contact />} />
           <Route path='cart' element={<Cart />} />
           <Route path='wishlist' element={<WishList />} />
+          <Route path='history' element={<RecentlyViewedItems />} />
+          <Route path='inbox' element={<Inbox />} />
+          <Route path='orders' element={<Orders />} />
           <Route
             path=':id'
             element={<ProductDetails />}

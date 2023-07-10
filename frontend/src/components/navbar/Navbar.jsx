@@ -51,8 +51,22 @@ const Navbar = ({ setIsPending, setHamburgerMenu }) => {
     }
   }
 
+  const linkToRouteMap = {
+    'my account': '.',
+    orders: '/orders',
+    inbox: '/inbox',
+    'saved items': '/wishlist',
+    'recently viewed': '/history',
+  }
+
   const dropdownList = dropdown.map((item) => (
-    <DropdownItem key={item.id} {...item} onClick={() => setOpen(false)} />
+    <Link
+      to={linkToRouteMap[item.name]}
+      key={item.id}
+      onClick={() => setOpen(false)}
+    >
+      <DropdownItem {...item} />
+    </Link>
   ))
 
   return (

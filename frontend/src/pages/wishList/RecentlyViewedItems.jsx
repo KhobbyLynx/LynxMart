@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { BsFillArrowThroughHeartFill } from 'react-icons/bs'
+import { GiClick } from 'react-icons/gi'
 import './ItemsStyles.scss'
 import FeaturedProducts from '../../components/featuredProducts/FeaturedProducts'
 
-const WishList = () => {
+const RecentlyViewedItems = () => {
   const [products, setProducts] = useState(() =>
-    JSON.parse(localStorage.getItem('wishlist'))
+    JSON.parse(localStorage.getItem('recentlyViewed'))
   )
 
   useEffect(() => {
     const handleStorageChange = () => {
-      setProducts(JSON.parse(localStorage.getItem('wishlist')))
+      setProducts(JSON.parse(localStorage.getItem('recentlyViewed')))
     }
 
     window.addEventListener('storage', handleStorageChange)
@@ -24,16 +24,13 @@ const WishList = () => {
     <>
       {products === null || products?.length === 0 ? (
         <div className='no-product-found dfacjc fdc'>
-          <h6 className='no-product-found__title'>Saved Products</h6>
+          <h6 className='no-product-found__title'>Recently Viewed Products</h6>
           <div className='no-product-found__icon-container df'>
-            <BsFillArrowThroughHeartFill
-              className='no-product-found__icon'
-              size={64}
-            />
+            <GiClick className='no-product-found__icon' size={64} />
           </div>
           <div className='no-product-found__message dfacjc fdc'>
-            <p className='head-text'>No Saved Products</p>
-            <p>You have no saved products at the moment.</p>
+            <p className='head-text'>No Recently Viewed Products</p>
+            <p>You have no recently viewed products at the moment.</p>
           </div>
           <Link to='/shop'>
             <button className='no-product-found__btn'>start shopping</button>
@@ -50,4 +47,4 @@ const WishList = () => {
   )
 }
 
-export default WishList
+export default RecentlyViewedItems

@@ -95,24 +95,4 @@
             }
         }
     }
-    .featured__products {
-        padding: 50px 0;
-        text-align: center;
-
-        h2 {
-            font-size: 46px;
-            line-height: 54px;
-            color: var(--cl-gray-800);
-        }
-        p {
-            font-size: 16px;
-            color: var(--cl-gray-700);
-            margin: 15px 0 20px 0;
-        }
-        .product-grid {
-            @media screen and (max-width: "500px") {
-                padding: 0px;
-            }
-        }
-    }
 }

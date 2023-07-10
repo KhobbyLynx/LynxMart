@@ -120,17 +120,19 @@ const MainLayout = () => {
                 <span>LynxMart</span>
               </div>
             </div>
-            <div
-              className='hamburger-menu__tab mt50 bb dfac'
-              onClick={() => setHamburgerMenu(false)}
-            >
-              <img
-                className='menu-icon'
-                src='https://res.cloudinary.com/khobbylynx/image/upload/v1688345492/lynxmart/img/icons/online-support_nse2gy.png'
-                alt=''
-              />
-              <span>Live Help</span>
-            </div>
+            <a href="https://wa.me/233508783805?text=I'm%20need%20a%20website%20for%20myr%20business">
+              <div
+                className='hamburger-menu__tab mt50 bb dfac'
+                onClick={() => setHamburgerMenu(false)}
+              >
+                <img
+                  className='menu-icon'
+                  src='https://res.cloudinary.com/khobbylynx/image/upload/v1688345492/lynxmart/img/icons/online-support_nse2gy.png'
+                  alt=''
+                />
+                <span>Live Help</span>
+              </div>
+            </a>
             <div
               className='hamburger-menu__head-tab df jsb'
               onClick={() => setHamburgerMenu(false)}
@@ -170,7 +172,7 @@ const MainLayout = () => {
         </>
       }
       <div className={`main__layout ${hamburgerMenu && 'inactive-scroll'} `}>
-        <Outlet />
+        <Outlet className='outlet' />
         {pathname === '/cart' ? null : <Newsletter />}
         <Footer />
       </div>
