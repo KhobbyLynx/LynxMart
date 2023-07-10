@@ -120,7 +120,7 @@ const MainLayout = () => {
                 <span>LynxMart</span>
               </div>
             </div>
-            <a href="https://wa.me/233508783805?text=I'm%20need%20a%20website%20for%20myr%20business">
+            <a href='https://wa.me/233508783805?text=I%20need%20a%20website%20for%20my%20business'>
               <div
                 className='hamburger-menu__tab mt50 bb dfac'
                 onClick={() => setHamburgerMenu(false)}
