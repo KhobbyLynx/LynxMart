@@ -1,12 +1,12 @@
 // ** Logo
-import logo from '../../../public/lynx.png'
+import { appConfig } from '../../configs/appConfig'
 
-const SpinnerComponent = () => {
+const Spinner = () => {
   return (
     <div className='fallback-spinner app-loader'>
       <img
         className='fallback-logo'
-        src={logo}
+        src={appConfig.app.appLogoImage}
         alt='logo'
         style={{ width: '86px', height: '86px' }}
       />
@@ -19,4 +19,4 @@ const SpinnerComponent = () => {
   )
 }
 
-export default SpinnerComponent
+export default Spinner

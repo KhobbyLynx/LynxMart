@@ -1,5 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
 import Navbar from '../navbar/Navbar'
+
+// ** MUI Imports
+import Fab from '@mui/material/Fab'
+
 import {
   Link,
   Outlet,
@@ -15,6 +19,9 @@ import Newsletter from '../newsletter/Newsletter'
 import HashLoader from 'react-spinners/HashLoader'
 import { images } from '../../constants'
 import { mobileMenu, mobileMenuCategory } from '../../data'
+import ScrollToTop from '../../core/components/scroll-to-top'
+import { BsArrowUp } from 'react-icons/bs'
+import { appConfig } from '../../configs/appConfig'
 
 const MainLayout = () => {
   const { pathname } = useLocation()
@@ -175,6 +182,13 @@ const MainLayout = () => {
         <Outlet className='outlet' />
         {pathname === '/cart' ? null : <Newsletter />}
         <Footer />
+        {appConfig.layout.scrollToTop === true ? (
+          <ScrollToTop className='mui-fixed'>
+            <Fab color='primary' size='small' aria-label='scroll back to top'>
+              <BsArrowUp />
+            </Fab>
+          </ScrollToTop>
+        ) : null}
       </div>
     </>
   )
