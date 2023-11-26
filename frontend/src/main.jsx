@@ -1,16 +1,26 @@
+// ** React imports
 import React, { Suspense, lazy } from 'react'
 import ReactDOM from 'react-dom/client'
-import { Provider } from 'react-redux'
-import { ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
 
+// ** Toast
+import { ToastContainer } from 'react-toastify'
+
+// ** Fallback loader
 import Spinner from './components/spinner/FallbackSpinner'
 
-import '../src/scss/style.scss'
+// ** Styles
+import '/src/scss/style.scss'
 import './index.css'
 import './slick/slick.css'
 import './slick/slick-theme.css'
+import 'react-toastify/dist/ReactToastify.css'
+
+// ** Store
+import { Provider } from 'react-redux'
 import store from './store/index.js'
+
+// ** App config
+import { appConfig } from './configs/appConfig.js'
 
 // ** Lazy load app
 const LazyApp = lazy(() => import('./App.jsx'))
@@ -21,7 +31,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Suspense fallback={<Spinner />}>
         <LazyApp />
         <ToastContainer
-          position='top-right'
+          position={appConfig.layout.toastPostision}
           autoClose={2000}
           hideProgressBar={false}
           newestOnTop
@@ -30,7 +40,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           pauseOnFocusLoss={false}
           draggable={false}
           pauseOnHover
-          theme='light'
+          theme={appConfig.layout.theme}
         />
       </Suspense>
     </Provider>
