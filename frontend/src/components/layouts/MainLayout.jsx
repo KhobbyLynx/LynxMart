@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import Navbar from '../navbar/Navbar'
 
 // ** MUI Imports
-import Fab from '@mui/material/Fab'
+import { Fab } from '@mui/material'
 
 import {
   Link,
